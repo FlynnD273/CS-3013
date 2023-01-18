@@ -1,2 +1,2 @@
-//Reads a number from seed.txt and returns it as int
-int readseed();
+//Reads a number from a given path and returns it as int
+int readseed(const char *path);

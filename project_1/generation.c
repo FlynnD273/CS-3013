@@ -7,7 +7,7 @@
 
 int main () {
 	// Initialize the seed from the seed.txt file
-	int seed = readseed();
+	int seed = readseed("seed.txt");
 	srand(seed);
 
 	// Set the number of children to make, from the seeded value
