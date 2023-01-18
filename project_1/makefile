@@ -1,9 +1,15 @@
-make generation: generation.c seed_reader.c
-	gcc -g -o generation generation.c seed_reader.c
+CC= gcc
+CFLAGS= seed_reader.c -I.
+RM= rm -vf   
+SRCFILES= $(filter-out seed_reader.c, $(wildcard *.c))
+PROGFILES= $(patsubst %.c, %, $(SRCFILES))
 
-make clean:
-	rm -f prolific generation explorer slug slugrace adler_duniho_project1.zip
 
-make zip:
+all: $(PROGFILES)
+
+clean:
+	$(RM) $(PROGFILES)  adler_duniho_project1.zip
+
+zip:
 	make clean
 	zip adler_duniho_project1 *
