@@ -5,8 +5,6 @@
 #include "seed_reader.h"
 
 int main() {
-	int parentpid = getpid();
-
 	int seed = readseed("seed.txt");
 	srand(seed);
 	int numchildren = rand() % 6 + 8;
@@ -34,10 +32,11 @@ int main() {
 		else {
 			int waittime = kids[currentchild] % 3 + 1;
 			int exitcode = kids[currentchild] % 50 + 1;
-			printf("\t[Child, PID: %i]: I am the child and I will wait %i seconds and exit with code %i.\n", getpid(), waittime, exitcode);
+			pid_t mypid = getpid();
+			printf("\t[Child, PID: %i]: I am the child and I will wait %i seconds and exit with code %i.\n", mypid, waittime, exitcode);
 			sleep(waittime);
-			printf("\t[Child, PID: %i]: Now exiting...\n", getpid());
-			return exitcode;
+			printf("\t[Child, PID: %i]: Now exiting...\n", mypid);
+			exit(exitcode);
 		}
 	}
 }
