@@ -7,6 +7,10 @@ PROGFILES= $(patsubst %.c, %, $(SRCFILES))
 
 all: $(PROGFILES)
 
+slugrace: slug.c slugrace.c seed_reader.c
+	make slug
+	$(CC) $(CFLAGS) slugrace.c -o slugrace
+
 clean:
 	$(RM) $(PROGFILES)  adler_duniho_project1.zip
 
