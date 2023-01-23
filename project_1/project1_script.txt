@@ -1,0 +1,759 @@
+Script started on 2023-01-23 18:55:17-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="148" LINES="19"]
+]0;flynn@DESKTOP-5JN7KRS: ~/CS3013/CS-3013/project_1[01;32mflynn@DESKTOP-5JN7KRS[00m:[01;34m~/CS3013/CS-3013/project_1[00m$ make [K
+gcc seed_reader.c -I.    generation.c   -o generation
+gcc seed_reader.c -I.    explorer.c   -o explorer
+gcc seed_reader.c -I.    slug.c   -o slug
+make slug
+make[1]: Entering directory '/home/flynn/CS3013/CS-3013/project_1'
+make[1]: 'slug' is up to date.
+make[1]: Leaving directory '/home/flynn/CS3013/CS-3013/project_1'
+gcc seed_reader.c -I. slugrace.c -o slugrace
+gcc seed_reader.c -I.    prolific.c   -o prolific
+]0;flynn@DESKTOP-5JN7KRS: ~/CS3013/CS-3013/project_1[01;32mflynn@DESKTOP-5JN7KRS[00m:[01;34m~/CS3013/CS-3013/project_1[00m$ ls
+''$'\033\033'   [0m[01;32mexplorer[0m     generation.c   project1_script   seed.txt        seed_slug_1.txt   seed_slug_4.txt   [01;32mslugrace[0m
+ README.txt     explorer.c   generation.d   [01;32mprolific[0m          seed_reader.c   seed_slug_2.txt   [01;32mslug[0m              slugrace.c
+ [01;32ma.out[0m          [01;32mgeneration[0m   makefile       prolific.c        seed_reader.h   seed_slug_3.txt   slug.c
+]0;flynn@DESKTOP-5JN7KRS: ~/CS3013/CS-3013/project_1[01;32mflynn@DESKTOP-5JN7KRS[00m:[01;34m~/CS3013/CS-3013/project_1[00m$ ./prolific 
+Seed value: 12345
+Number of children: 11
+[Parent]: I am waiting for PID 791 to finish.
+	[Child, PID: 791]: I am the child and I will wait 3 seconds and exit with code 22.
+	[Child, PID: 791]: Now exiting...
+[Parent]: Child 791 finished with status code 22. Onward!
+[Parent]: I am waiting for PID 792 to finish.
+	[Child, PID: 792]: I am the child and I will wait 3 seconds and exit with code 24.
+	[Child, PID: 792]: Now exiting...
+[Parent]: Child 792 finished with status code 24. Onward!
+[Parent]: I am waiting for PID 793 to finish.
+	[Child, PID: 793]: I am the child and I will wait 2 seconds and exit with code 2.
+	[Child, PID: 793]: Now exiting...
+[Parent]: Child 793 finished with status code 2. Onward!
+[Parent]: I am waiting for PID 794 to finish.
+	[Child, PID: 794]: I am the child and I will wait 1 seconds and exit with code 22.
+	[Child, PID: 794]: Now exiting...
+[Parent]: Child 794 finished with status code 22. Onward!
+[Parent]: I am waiting for PID 795 to finish.
+	[Child, PID: 795]: I am the child and I will wait 1 seconds and exit with code 5.
+	[Child, PID: 795]: Now exiting...
+[Parent]: Child 795 finished with status code 5. Onward!
+[Parent]: I am waiting for PID 796 to finish.
+	[Child, PID: 796]: I am the child and I will wait 3 seconds and exit with code 38.
+	[Child, PID: 796]: Now exiting...
+[Parent]: Child 796 finished with status code 38. Onward!
+[Parent]: I am waiting for PID 797 to finish.
+	[Child, PID: 797]: I am the child and I will wait 2 seconds and exit with code 3.
+	[Child, PID: 797]: Now exiting...
+[Parent]: Child 797 finished with status code 3. Onward!
+[Parent]: I am waiting for PID 798 to finish.
+	[Child, PID: 798]: I am the child and I will wait 2 seconds and exit with code 29.
+	[Child, PID: 798]: Now exiting...
+[Parent]: Child 798 finished with status code 29. Onward!
+[Parent]: I am waiting for PID 799 to finish.
+	[Child, PID: 799]: I am the child and I will wait 1 seconds and exit with code 29.
+	[Child, PID: 799]: Now exiting...
+[Parent]: Child 799 finished with status code 29. Onward!
+[Parent]: I am waiting for PID 800 to finish.
+	[Child, PID: 800]: I am the child and I will wait 3 seconds and exit with code 28.
+	[Child, PID: 800]: Now exiting...
+[Parent]: Child 800 finished with status code 28. Onward!
+[Parent]: I am waiting for PID 801 to finish.
+	[Child, PID: 801]: I am the child and I will wait 1 seconds and exit with code 48.
+	[Child, PID: 801]: Now exiting...
+[Parent]: Child 801 finished with status code 48. Onward!
+]0;flynn@DESKTOP-5JN7KRS: ~/CS3013/CS-3013/project_1[01;32mflynn@DESKTOP-5JN7KRS[00m:[01;34m~/CS3013/CS-3013/project_1[00m$ ./generation
+[Parent, PID: 802]: I am waiting for PID 803 to finish
+	[Child, PID: 803]: I was called with descendant count=12. I'll have 11 descendants(s).
+[Parent, PID: 803]: I am waiting for PID 804 to finish
+	[Child, PID: 804]: I was called with descendant count=11. I'll have 10 descendants(s).
+[Parent, PID: 804]: I am waiting for PID 805 to finish
+	[Child, PID: 805]: I was called with descendant count=10. I'll have 9 descendants(s).
+[Parent, PID: 805]: I am waiting for PID 806 to finish
+	[Child, PID: 806]: I was called with descendant count=9. I'll have 8 descendants(s).
+[Parent, PID: 806]: I am waiting for PID 807 to finish
+	[Child, PID: 807]: I was called with descendant count=8. I'll have 7 descendants(s).
+[Parent, PID: 807]: I am waiting for PID 808 to finish
+	[Child, PID: 808]: I was called with descendant count=7. I'll have 6 descendants(s).
+	[Child, PID: 809]: I was called with descendant count=6. I'll have 5 descendants(s).
+[Parent, PID: 808]: I am waiting for PID 809 to finish
+[Parent, PID: 809]: I am waiting for PID 810 to finish
+	[Child, PID: 810]: I was called with descendant count=5. I'll have 4 descendants(s).
+[Parent, PID: 810]: I am waiting for PID 811 to finish
+	[Child, PID: 811]: I was called with descendant count=4. I'll have 3 descendants(s).
+[Parent, PID: 811]: I am waiting for PID 812 to finish
+	[Child, PID: 812]: I was called with descendant count=3. I'll have 2 descendants(s).
+[Parent, PID: 812]: I am waiting for PID 813 to finish
+	[Child, PID: 813]: I was called with descendant count=2. I'll have 1 descendants(s).
+[Parent, PID: 813]: I am waiting for PID 814 to finish
+	[Child, PID: 814]: I was called with descendant count=1. I'll have 0 descendants(s).
+[Parent, PID: 813]: Child 814 finished with status code 0. It's now my turn to exit.
+[Parent, PID: 812]: Child 813 finished with status code 1. It's now my turn to exit.
+[Parent, PID: 811]: Child 812 finished with status code 2. It's now my turn to exit.
+[Parent, PID: 810]: Child 811 finished with status code 3. It's now my turn to exit.
+[Parent, PID: 809]: Child 810 finished with status code 4. It's now my turn to exit.
+[Parent, PID: 808]: Child 809 finished with status code 5. It's now my turn to exit.
+[Parent, PID: 807]: Child 808 finished with status code 6. It's now my turn to exit.
+[Parent, PID: 806]: Child 807 finished with status code 7. It's now my turn to exit.
+[Parent, PID: 805]: Child 806 finished with status code 8. It's now my turn to exit.
+[Parent, PID: 804]: Child 805 finished with status code 9. It's now my turn to exit.
+[Parent, PID: 803]: Child 804 finished with status code 10. It's now my turn to exit.
+[Parent, PID: 802]: Child 803 finished with status code 11. It's now my turn to exit.
+]0;flynn@DESKTOP-5JN7KRS: ~/CS3013/CS-3013/project_1[01;32mflynn@DESKTOP-5JN7KRS[00m:[01;34m~/CS3013/CS-3013/project_1[00m$ ./explorer
+Seed value: 12345
+Selection #1: /usr
+Current reported directory: /usr
+[Parent]: I am waiting for PID 816 to finish.
+	[Child, PID: 816]: Executing 'ls -tr' command...
+ seed.txt	 seed_reader.c	   slug.c       seed_slug_1.txt  ''$'\033\033'	 slugrace.c   explorer	 prolific
+ generation.c	 generation.d	   prolific.c   seed_slug_2.txt   a.out		 README.txt   slug	 project1_script
+ seed_reader.h	 seed_slug_3.txt   explorer.c   seed_slug_4.txt   makefile	 generation   slugrace
+[Parent]: Child 816 finished with status code 0. Onward!
+Selection #2: /bin
+Current reported directory: /usr/bin
+[Parent]: I am waiting for PID 817 to finish.
+	[Child, PID: 817]: Executing 'ls -tr' command...
+games  libx32  lib32  local  lib64  libexec  src  sbin	include  share	lib  bin
+[Parent]: Child 817 finished with status code 0. Onward!
+Selection #3: /bin
+Current reported directory: /usr/bin
+[Parent]: I am waiting for PID 818 to finish.
+	[Child, PID: 818]: Executing 'ls -tr' command...
+ c89-gcc		      routel			    lessfile			       fwupdagent
+ c99-gcc		      routef			    lessecho			       dfu-tool
+ run-one		      rdma			    less			       dbxtool
+ run-this-one		      nstat			    finalrd			       openssl
+ run-one-until-success	      lnstat			    pkmon			       c_rehash
+ run-one-until-failure	      ip			    pkcon			       watchgnupg
+ run-one-constantly	      ctstat			    check-language-support	       symcryptrun
+ keep-one-running	      pidof			    plymouth			       kbxutil
+ time			      ubuntu-distro-info	    lshw			       gpgv
+ zipsplit		      distro-info		    lsof			       gpgtar
+ zipnote		      debian-distro-info	    migrate-pubring-from-classic-gpg   gpgsplit
+ zipcloak		      crontab			    sudoreplay			       gpgsm
+ zip			      ssh-copy-id		    sudoedit			       gpgparsemail
+ lspgpot		      btrfstune			    sudo			       gpgconf
+ pollinate		      btrfsck			    cvtsudoers			       gpgcompose
+ make-first-existing-target   btrfs-select-super	    screen			       gpg-zip
+ make			      btrfs-map-logical		    iscsiadm			       gpg-wks-server
+ eatmydata		      btrfs-image		    lsinitramfs			       gpg-connect-agent
+ batch			      btrfs-find-root		    setpci			       gpg-agent
+ atrm			      btrfs-convert		    lspci			       gpg
+ atq			      btrfs			    tmux			       dirmngr-client
+ at			      mawk			    unlz4			       dirmngr
+ tree			      wifi-status		    lz4cat			       pyjwt3
+ ucfr			      vigpg			    lz4c			       rsync
+ ucfq			      purge-old-kernels		    lz4				       rrsync
+ ucf			      manifest			    unmkinitramfs		       sosreport
+ lcf			      ctail			    linux-version		       sos-collector
+ sed			      col9			    gsettings			       sos
+ xclip-pastefile	      col8			    gresource			       do-release-upgrade
+ xclip-cutfile		      col7			    glib-compile-schemas	       locale-check
+ xclip-copyfile		      col6			    gio-querymodules		       nawk
+ xclip			      col5			    gio				       awk
+ bc			      col4			    gdbus			       w
+ xdg-user-dirs-update	      col3			    gapplication		       sh
+ xdg-user-dir		      col2			    mt-gnu			       pager
+ ltrace			      col1			    cpio			       unlzma
+ pass			      byobu-ulevel		    udisksctl			       lzmore
+ netkit-ftp		      byobu-ugraph		    watch			       lzma
+ strace-log-merge	      byobu-tmux		    w.procps			       lzless
+ sdiff			      byobu-status-detail	    vmstat			       lzgrep
+ diff3			      byobu-status		    uptime			       lzfgrep
+ diff			      byobu-silent		    top				       lzegrep
+ cmp			      byobu-shell		    tload			       lzdiff
+ unicode_stop		      byobu-select-session	    snice			       lzcmp
+ unicode_start		      byobu-select-profile	    slabtop			       lzcat
+ splitfont		      byobu-select-backend	    skill			       view
+ showkey		      byobu-screen		    pwdx			       vi
+ showconsolefont	      byobu-reconnect-sockets	    ps				       rview
+ setmetamode		      byobu-quiet		    pmap			       netcat
+ setlogcons		      byobu-prompt		    pkill			       nc
+ setleds		      byobu-layout		    pgrep			       ex
+ setkeycodes		      byobu-launcher-uninstall	    kill			       editor
+ setfont		      byobu-launcher-install	    free			       mt
+ screendump		      byobu-launcher		    unsquashfs			       telnet
+ resizecons		      byobu-launch		    mksquashfs			       write
+ psfxtable		      byobu-keybindings		    apt-add-repository		       from
+ psfstriptable		      byobu-janitor		    add-apt-repository		       pico
+ psfgettable		      byobu-export		    wget			       pftp
+ psfaddtable		      byobu-enable-prompt	    pax11publish		       ftp
+ openvt			      byobu-enable		    pasuspender			       traceroute6
+ mk_modmap		      byobu-disable-prompt	    parecord			       infobrowser
+ mapscrn		      byobu-disable		    parec			       pinentry
+ loadunimap		      byobu-ctrl-a		    paplay			       jsondiff
+ loadkeys		      byobu-config		    pamon			       vimdiff
+ kbdinfo		      byobu			    padsp			       vim
+ kbd_mode		      NF			    pactl			       rvim
+ getkeycodes		      xargs			    pacmd			       rsh
+ fgconsole		      find			    pacat			       rlogin
+ dumpkeys		      whiptail			    pa-info			       rcp
+ deallocvt		      red			    static-sh			       x-www-browser
+ codepage		      ed			    busybox			       www-browser
+ chvt			      sgp_dd			    mesa-overlay-control.py	       x86_64-linux-gnu-strip
+ deb-systemd-invoke	      sgm_dd			    gdbtui			       x86_64-linux-gnu-strings
+ deb-systemd-helper	      sginfo			    gdbserver			       x86_64-linux-gnu-size
+ volname		      sg_zone			    gdb-add-index		       x86_64-linux-gnu-readelf
+ eject			      sg_xcopy			    gdb				       x86_64-linux-gnu-ranlib
+ dash			      sg_write_x		    gcore			       x86_64-linux-gnu-objdump
+ on_ac_power		      sg_write_verify		    lsmod			       x86_64-linux-gnu-objcopy
+ patch			      sg_write_same		    kmod			       x86_64-linux-gnu-nm
+ pbput			      sg_write_long		    x86_64			       x86_64-linux-gnu-ld.gold
+ pastebinit		      sg_write_buffer		    whereis			       x86_64-linux-gnu-ld.bfd
+ pbputs			      sg_wr_mode		    wdctl			       x86_64-linux-gnu-ld
+ pbget			      sg_vpd			    wall			       x86_64-linux-gnu-gprof
+ debconf-show		      sg_verify			    uuidparse			       x86_64-linux-gnu-gold
+ debconf-set-selections       sg_unmap			    uuidgen			       x86_64-linux-gnu-elfedit
+ debconf-escape		      sg_turs			    utmpdump			       x86_64-linux-gnu-dwp
+ debconf-copydb		      sg_timestamp		    unshare			       x86_64-linux-gnu-c++filt
+ debconf-communicate	      sg_test_rwbuf		    umount			       x86_64-linux-gnu-as
+ debconf-apt-progress	      sg_sync			    taskset			       x86_64-linux-gnu-ar
+ debconf		      sg_stream_ctl		    su				       x86_64-linux-gnu-addr2line
+ mtr-packet		      sg_stpg			    setterm			       strip
+ mtr			      sg_start			    setsid			       strings
+ xauth			      sg_ses_microcode		    setpriv			       size
+ lsb_release		      sg_ses			    setarch			       readelf
+ lesspipe		      sg_senddiag		    scriptreplay		       ranlib
+ bzexe			      sg_seek			    script			       objdump
+ yes			      sg_scan			    rev				       objcopy
+ whoami			      sg_sat_set_features	    resizepart			       nm
+ who			      sg_sat_read_gplog		    renice			       ld.gold
+ wc			      sg_sat_phy_event		    rename.ul			       ld.bfd
+ vdir			      sg_sat_identify		    prlimit			       ld
+ users			      sg_sanitize		    partx			       gprof
+ unlink			      sg_safte			    nsenter			       gold
+ uniq			      sg_rtpg			    namei			       elfedit
+ unexpand		      sg_rmsn			    mountpoint			       dwp
+ uname			      sg_reset_wp		    mount			       c++filt
+ tty			      sg_reset			    more			       as
+ tsort			      sg_requests		    mesg			       ar
+ truncate		      sg_rep_zones		    mcookie			       addr2line
+ true			      sg_referrals		    lsns			       udevadm
+ tr			      sg_reassign		    lsmem			       timedatectl
+ touch			      sg_readcap		    lslogins			       systemd-umount
+ timeout		      sg_read_long		    lslocks			       systemd-tty-ask-password-agent
+ test			      sg_read_buffer		    lsipc			       systemd-tmpfiles
+ tee			      sg_read_block_limits	    lscpu			       systemd-sysusers
+ tail			      sg_read_attr		    lsblk			       systemd-stdio-bridge
+ tac			      sg_read			    logger			       systemd-socket-activate
+ sync			      sg_rdac			    linux64			       systemd-run
+ sum			      sg_rbuf			    linux32			       systemd-resolve
+ stty			      sg_raw			    lastb			       systemd-path
+ stdbuf			      sg_prevent		    last			       systemd-notify
+ stat			      sg_persist		    ipcs			       systemd-mount
+ split			      sg_opcodes		    ipcrm			       systemd-machine-id-setup
+ sort			      sg_modes			    ipcmk			       systemd-inhibit
+ sleep			      sg_map26			    ionice			       systemd-id128
+ shuf			      sg_map			    i386			       systemd-hwdb
+ shred			      sg_luns			    getopt			       systemd-escape
+ sha512sum		      sg_logs			    flock			       systemd-detect-virt
+ sha384sum		      sg_inq			    findmnt			       systemd-delta
+ sha256sum		      sg_ident			    fincore			       systemd-cgtop
+ sha224sum		      sg_get_lba_status		    fallocate			       systemd-cgls
+ sha1sum		      sg_get_config		    dmesg			       systemd-cat
+ seq			      sg_format			    delpart			       systemd-ask-password
+ runcon			      sg_emc_trespass		    chrt			       systemd-analyze
+ rmdir			      sg_decode_sense		    choom			       systemd
+ rm			      sg_dd			    addpart			       systemctl
+ realpath		      sg_copy_results		    landscape-sysinfo		       resolvectl
+ readlink		      sg_compare_and_write	    pkttyagent			       networkctl
+ pwd			      sg_bg_ctl			    pkexec			       loginctl
+ ptx			      scsi_temperature		    pkcheck			       localectl
+ printf			      scsi_stop			    pkaction			       journalctl
+ printenv		      scsi_start		    boltctl			       hostnamectl
+ pr			      scsi_satl			    x86_64-linux-gnu-gcov-tool-9       busctl
+ pinky			      scsi_ready		    x86_64-linux-gnu-gcov-dump-9       bootctl
+ pathchk		      scsi_readcap		    x86_64-linux-gnu-gcov-9	       ubuntu-bug
+ paste			      scsi_mandat		    x86_64-linux-gnu-gcc-ranlib-9      oem-getlogs
+ od			      scsi_logging_level	    x86_64-linux-gnu-gcc-nm-9	       apport-unpack
+ numfmt			      rescan-scsi-bus.sh	    x86_64-linux-gnu-gcc-ar-9	       apport-collect
+ nproc			      whatis			    x86_64-linux-gnu-gcc-9	       apport-cli
+ nohup			      manpath			    x86_64-linux-gnu-g++-9	       apport-bug
+ nl			      mandb			    x86_64-linux-gnu-cpp-9	       vmware-xferlogs
+ nice			      man-recode		    gcov-tool-9			       vmware-vmblock-fuse
+ mv			      man			    gcov-dump-9			       vmware-vgauth-cmd
+ mktemp			      lexgrog			    gcov-9			       vmware-toolbox-cmd
+ mknod			      catman			    gcc-ranlib-9		       vmware-rpctool
+ mkfifo			      apropos			    gcc-nm-9			       vmware-namespace-cmd
+ mkdir			      vcs-run			    gcc-ar-9			       vmware-hgfsclient
+ md5sum.textutils	      growpart			    gcc-9			       vmware-checkvm
+ md5sum			      ec2metadata		    g++-9			       vmware-alias-import
+ ls			      tset			    cpp-9			       vmtoolsd
+ logname		      tput			    sbverify			       vmhgfs-fuse
+ ln			      toe			    sbvarsign			       vm-support
+ link			      tic			    sbsign			       VGAuthService
+ join			      tabs			    sbsiglist			       nsupdate
+ install		      reset			    sbkeysync			       nslookup
+ id			      infotocap			    sbattach			       mdig
+ hostid			      infocmp			    kmodsign			       host
+ head			      clear			    tar				       dig
+ groups			      captoinfo			    twistd3			       delv
+ fold			      iptables-xml		    twist3			       zipdetails
+ fmt			      ssh-import-id-lp		    trial3			       xsubpp
+ false			      ssh-import-id-gh		    tkconch3			       splain
+ factor			      ssh-import-id		    pyhtmlizer3			       shasum
+ expr			      xwininfo			    mailmail3			       ptargrep
+ expand			      xvinfo			    conch3			       ptardiff
+ env			      xprop			    ckeygen3			       ptar
+ echo			      xmessage			    cftp3			       prove
+ du			      xlsfonts			    ssh-keyscan			       podselect
+ dirname		      xlsclients		    ssh-keygen			       podchecker
+ dircolors		      xlsatoms			    ssh-argv0			       pod2usage
+ dir			      xkill			    ssh-agent			       pod2text
+ df			      xfontsel			    ssh-add			       pod2man
+ dd			      xfd			    ssh				       pod2html
+ date			      xev			    slogin			       pl2pm
+ cut			      xdriinfo			    sftp			       piconv
+ csplit			      xdpyinfo			    scp				       perlthanks
+ cp			      viewres			    zdump			       perlivp
+ comm			      luit			    tzselect			       perlbug
+ cksum			      listres			    sprof			       perl5.30.0
+ chown			      editres			    sotruss			       perl5.30-x86_64-linux-gnu
+ chmod			      appres			    rpcgen			       perl
+ chgrp			      ulockmgr_server		    pldd			       libnetcfg
+ chcon			      fusermount		    mtrace			       json_pp
+ cat			      nc.openbsd		    localedef			       instmodsh
+ basename		      python3			    locale			       h2xs
+ base64			      pygettext3		    ldd				       h2ph
+ base32			      pydoc3			    iconv			       encguess
+ b2sum			      py3versions		    getent			       enc2xs
+ arch			      py3compile		    getconf			       cpan5.30-x86_64-linux-gnu
+'['			      py3clean			    gencat			       cpan
+ jsonpatch-jsondiff	      pdb3			    catchsegv			       corelist
+ jsonpatch		      keyring			    mmcli			       zipinfo
+ bzmore			      x86_64-linux-gnu-gcov-tool    znew			       zipgrep
+ bzless			      x86_64-linux-gnu-gcov-dump    zmore			       unzipsfx
+ bzip2recover		      x86_64-linux-gnu-gcov	    zless			       unzip
+ bzip2			      x86_64-linux-gnu-gcc-ranlib   zgrep			       funzip
+ bzgrep			      x86_64-linux-gnu-gcc-nm	    zforce			       dbus-uuidgen
+ bzfgrep		      x86_64-linux-gnu-gcc-ar	    zfgrep			       dbus-update-activation-environment
+ bzegrep		      x86_64-linux-gnu-gcc	    zegrep			       dbus-send
+ bzdiff			      x86_64-linux-gnu-g++	    zdiff			       dbus-run-session
+ bzcmp			      x86_64-linux-gnu-cpp	    zcmp			       dbus-monitor
+ bzcat			      gcov-tool			    zcat			       dbus-launch
+ bunzip2		      gcov-dump			    uncompress			       dbus-daemon
+ fakeroot-tcp		      gcov			    gzip			       dbus-cleanup-sockets
+ fakeroot-sysv		      gcc-ranlib		    gzexe			       ntfswipe
+ faked-tcp		      gcc-nm			    gunzip			       ntfsusermap
+ faked-sysv		      gcc-ar			    xzmore			       ntfstruncate
+ usbreset		      gcc			    xzless			       ntfssecaudit
+ usbhid-dump		      g++			    xzgrep			       ntfsrecover
+ usb-devices		      cpp			    xzfgrep			       ntfsmove
+ lsusb			      troff			    xzegrep			       ntfsls
+ qrencode		      tbl			    xzdiff			       ntfsinfo
+ install-info		      soelim			    xzcmp			       ntfsfix
+ info			      preconv			    xzcat			       ntfsfallocate
+ ginstall-info		      pic			    xz				       ntfsdecrypt
+ see			      nroff			    unxz			       ntfscmp
+ run-mailcap		      neqn			    lzmainfo			       ntfscluster
+ print			      gtbl			    rbash			       ntfscat
+ edit			      grotty			    clear_console		       ntfs-3g.probe
+ compose		      grops			    bashbug			       ntfs-3g
+ cautious-launcher	      grog			    bash			       lowntfs-3g
+ perldoc		      groff			    networkd-dispatcher		       python3.8
+ gawk			      gpic			    unattended-upgrades		       pygettext3.8
+ ypdomainname		      geqn			    unattended-upgrade		       pydoc3.8
+ nisdomainname		      eqn			    apt-sortpkgs		       pdb3.8
+ hostname		      automat-visualize3	    apt-mark			       ubuntu-advantage
+ domainname		      ngettext			    apt-key			       ua
+ dnsdomainname		      gettext.sh		    apt-get			       pro
+ pstree.x11		      gettext			    apt-ftparchive		       cloud-init-per
+ pstree			      envsubst			    apt-extracttemplates	       ubuntu-core-launcher
+ pslog			      pinentry-curses		    apt-config			       snapfuse
+ prtstat		      telnet.netkit		    apt-cdrom			       snapctl
+ peekfd			      update-mime-database	    apt-cache			       snap
+ killall		      setupcon			    apt				       sg
+ fuser			      ckbcomp			    update-alternatives		       passwd
+ sensible-pager		      ul			    dpkg-vendor			       newgrp
+ sensible-editor	      printerbanner		    dpkg-trigger		       login
+ sensible-browser	      ncal			    dpkg-statoverride		       lastlog
+ select-editor		      lorder			    dpkg-split			       gpasswd
+ htop			      look			    dpkg-source			       faillog
+ which			      hexdump			    dpkg-shlibdeps		       expiry
+ tempfile		      hd			    dpkg-scansources		       chsh
+ savelog		      column			    dpkg-scanpackages		       chfn
+ run-parts		      colrm			    dpkg-query			       chage
+ ischroot		      colcrt			    dpkg-parsechangelog		       ubuntu-security-status
+ chardetect3		      col			    dpkg-name			       hwe-support-status
+ chardet3		      calendar			    dpkg-mergechangelogs	       dotnet
+ rgrep			      cal			    dpkg-maintscript-helper	       cloud-init
+ file			      bsd-write			    dpkg-gensymbols		       cloud-id
+ jsonschema		      bsd-from			    dpkg-gencontrol		       curl
+ jsonpointer		      kernel-install		    dpkg-genchanges		       xxd
+ dh_bash-completion	      rnano			    dpkg-genbuildinfo		       vimtutor
+ grep			      nano			    dpkg-divert			       vim.tiny
+ fgrep			      strace			    dpkg-distaddfile		       vim.basic
+ egrep			      aa-exec			    dpkg-deb			       git-upload-pack
+ helpztags		      aa-enabled		    dpkg-checkbuilddeps		       git-upload-archive
+ traceroute6.iputils	      wslview			    dpkg-buildpackage		       git-shell
+ tracepath		      wslvar			    dpkg-buildflags		       git-receive-pack
+ ping6			      wslusc			    dpkg-architecture		       git
+ ping4			      wslupath			    dpkg			       wslpath
+ ping			      wslsys			    lsattr			       cc
+ miniterm		      wslfetch			    chattr			       c99
+ X11			      linux-update-symlinks	    fwupdtool			       c89
+ ss			      linux-check-removal	    fwupdmgr			       fakeroot
+ rtstat			      lesskey			    fwupdate			       c++
+[Parent]: Child 818 finished with status code 0. Onward!
+Selection #4: /proc
+Current reported directory: /proc
+[Parent]: I am waiting for PID 819 to finish.
+	[Child, PID: 819]: Executing 'ls -tr' command...
+ c89-gcc		      routel			    lessfile			       fwupdagent
+ c99-gcc		      routef			    lessecho			       dfu-tool
+ run-one		      rdma			    less			       dbxtool
+ run-this-one		      nstat			    finalrd			       openssl
+ run-one-until-success	      lnstat			    pkmon			       c_rehash
+ run-one-until-failure	      ip			    pkcon			       watchgnupg
+ run-one-constantly	      ctstat			    check-language-support	       symcryptrun
+ keep-one-running	      pidof			    plymouth			       kbxutil
+ time			      ubuntu-distro-info	    lshw			       gpgv
+ zipsplit		      distro-info		    lsof			       gpgtar
+ zipnote		      debian-distro-info	    migrate-pubring-from-classic-gpg   gpgsplit
+ zipcloak		      crontab			    sudoreplay			       gpgsm
+ zip			      ssh-copy-id		    sudoedit			       gpgparsemail
+ lspgpot		      btrfstune			    sudo			       gpgconf
+ pollinate		      btrfsck			    cvtsudoers			       gpgcompose
+ make-first-existing-target   btrfs-select-super	    screen			       gpg-zip
+ make			      btrfs-map-logical		    iscsiadm			       gpg-wks-server
+ eatmydata		      btrfs-image		    lsinitramfs			       gpg-connect-agent
+ batch			      btrfs-find-root		    setpci			       gpg-agent
+ atrm			      btrfs-convert		    lspci			       gpg
+ atq			      btrfs			    tmux			       dirmngr-client
+ at			      mawk			    unlz4			       dirmngr
+ tree			      wifi-status		    lz4cat			       pyjwt3
+ ucfr			      vigpg			    lz4c			       rsync
+ ucfq			      purge-old-kernels		    lz4				       rrsync
+ ucf			      manifest			    unmkinitramfs		       sosreport
+ lcf			      ctail			    linux-version		       sos-collector
+ sed			      col9			    gsettings			       sos
+ xclip-pastefile	      col8			    gresource			       do-release-upgrade
+ xclip-cutfile		      col7			    glib-compile-schemas	       locale-check
+ xclip-copyfile		      col6			    gio-querymodules		       nawk
+ xclip			      col5			    gio				       awk
+ bc			      col4			    gdbus			       w
+ xdg-user-dirs-update	      col3			    gapplication		       sh
+ xdg-user-dir		      col2			    mt-gnu			       pager
+ ltrace			      col1			    cpio			       unlzma
+ pass			      byobu-ulevel		    udisksctl			       lzmore
+ netkit-ftp		      byobu-ugraph		    watch			       lzma
+ strace-log-merge	      byobu-tmux		    w.procps			       lzless
+ sdiff			      byobu-status-detail	    vmstat			       lzgrep
+ diff3			      byobu-status		    uptime			       lzfgrep
+ diff			      byobu-silent		    top				       lzegrep
+ cmp			      byobu-shell		    tload			       lzdiff
+ unicode_stop		      byobu-select-session	    snice			       lzcmp
+ unicode_start		      byobu-select-profile	    slabtop			       lzcat
+ splitfont		      byobu-select-backend	    skill			       view
+ showkey		      byobu-screen		    pwdx			       vi
+ showconsolefont	      byobu-reconnect-sockets	    ps				       rview
+ setmetamode		      byobu-quiet		    pmap			       netcat
+ setlogcons		      byobu-prompt		    pkill			       nc
+ setleds		      byobu-layout		    pgrep			       ex
+ setkeycodes		      byobu-launcher-uninstall	    kill			       editor
+ setfont		      byobu-launcher-install	    free			       mt
+ screendump		      byobu-launcher		    unsquashfs			       telnet
+ resizecons		      byobu-launch		    mksquashfs			       write
+ psfxtable		      byobu-keybindings		    apt-add-repository		       from
+ psfstriptable		      byobu-janitor		    add-apt-repository		       pico
+ psfgettable		      byobu-export		    wget			       pftp
+ psfaddtable		      byobu-enable-prompt	    pax11publish		       ftp
+ openvt			      byobu-enable		    pasuspender			       traceroute6
+ mk_modmap		      byobu-disable-prompt	    parecord			       infobrowser
+ mapscrn		      byobu-disable		    parec			       pinentry
+ loadunimap		      byobu-ctrl-a		    paplay			       jsondiff
+ loadkeys		      byobu-config		    pamon			       vimdiff
+ kbdinfo		      byobu			    padsp			       vim
+ kbd_mode		      NF			    pactl			       rvim
+ getkeycodes		      xargs			    pacmd			       rsh
+ fgconsole		      find			    pacat			       rlogin
+ dumpkeys		      whiptail			    pa-info			       rcp
+ deallocvt		      red			    static-sh			       x-www-browser
+ codepage		      ed			    busybox			       www-browser
+ chvt			      sgp_dd			    mesa-overlay-control.py	       x86_64-linux-gnu-strip
+ deb-systemd-invoke	      sgm_dd			    gdbtui			       x86_64-linux-gnu-strings
+ deb-systemd-helper	      sginfo			    gdbserver			       x86_64-linux-gnu-size
+ volname		      sg_zone			    gdb-add-index		       x86_64-linux-gnu-readelf
+ eject			      sg_xcopy			    gdb				       x86_64-linux-gnu-ranlib
+ dash			      sg_write_x		    gcore			       x86_64-linux-gnu-objdump
+ on_ac_power		      sg_write_verify		    lsmod			       x86_64-linux-gnu-objcopy
+ patch			      sg_write_same		    kmod			       x86_64-linux-gnu-nm
+ pbput			      sg_write_long		    x86_64			       x86_64-linux-gnu-ld.gold
+ pastebinit		      sg_write_buffer		    whereis			       x86_64-linux-gnu-ld.bfd
+ pbputs			      sg_wr_mode		    wdctl			       x86_64-linux-gnu-ld
+ pbget			      sg_vpd			    wall			       x86_64-linux-gnu-gprof
+ debconf-show		      sg_verify			    uuidparse			       x86_64-linux-gnu-gold
+ debconf-set-selections       sg_unmap			    uuidgen			       x86_64-linux-gnu-elfedit
+ debconf-escape		      sg_turs			    utmpdump			       x86_64-linux-gnu-dwp
+ debconf-copydb		      sg_timestamp		    unshare			       x86_64-linux-gnu-c++filt
+ debconf-communicate	      sg_test_rwbuf		    umount			       x86_64-linux-gnu-as
+ debconf-apt-progress	      sg_sync			    taskset			       x86_64-linux-gnu-ar
+ debconf		      sg_stream_ctl		    su				       x86_64-linux-gnu-addr2line
+ mtr-packet		      sg_stpg			    setterm			       strip
+ mtr			      sg_start			    setsid			       strings
+ xauth			      sg_ses_microcode		    setpriv			       size
+ lsb_release		      sg_ses			    setarch			       readelf
+ lesspipe		      sg_senddiag		    scriptreplay		       ranlib
+ bzexe			      sg_seek			    script			       objdump
+ yes			      sg_scan			    rev				       objcopy
+ whoami			      sg_sat_set_features	    resizepart			       nm
+ who			      sg_sat_read_gplog		    renice			       ld.gold
+ wc			      sg_sat_phy_event		    rename.ul			       ld.bfd
+ vdir			      sg_sat_identify		    prlimit			       ld
+ users			      sg_sanitize		    partx			       gprof
+ unlink			      sg_safte			    nsenter			       gold
+ uniq			      sg_rtpg			    namei			       elfedit
+ unexpand		      sg_rmsn			    mountpoint			       dwp
+ uname			      sg_reset_wp		    mount			       c++filt
+ tty			      sg_reset			    more			       as
+ tsort			      sg_requests		    mesg			       ar
+ truncate		      sg_rep_zones		    mcookie			       addr2line
+ true			      sg_referrals		    lsns			       udevadm
+ tr			      sg_reassign		    lsmem			       timedatectl
+ touch			      sg_readcap		    lslogins			       systemd-umount
+ timeout		      sg_read_long		    lslocks			       systemd-tty-ask-password-agent
+ test			      sg_read_buffer		    lsipc			       systemd-tmpfiles
+ tee			      sg_read_block_limits	    lscpu			       systemd-sysusers
+ tail			      sg_read_attr		    lsblk			       systemd-stdio-bridge
+ tac			      sg_read			    logger			       systemd-socket-activate
+ sync			      sg_rdac			    linux64			       systemd-run
+ sum			      sg_rbuf			    linux32			       systemd-resolve
+ stty			      sg_raw			    lastb			       systemd-path
+ stdbuf			      sg_prevent		    last			       systemd-notify
+ stat			      sg_persist		    ipcs			       systemd-mount
+ split			      sg_opcodes		    ipcrm			       systemd-machine-id-setup
+ sort			      sg_modes			    ipcmk			       systemd-inhibit
+ sleep			      sg_map26			    ionice			       systemd-id128
+ shuf			      sg_map			    i386			       systemd-hwdb
+ shred			      sg_luns			    getopt			       systemd-escape
+ sha512sum		      sg_logs			    flock			       systemd-detect-virt
+ sha384sum		      sg_inq			    findmnt			       systemd-delta
+ sha256sum		      sg_ident			    fincore			       systemd-cgtop
+ sha224sum		      sg_get_lba_status		    fallocate			       systemd-cgls
+ sha1sum		      sg_get_config		    dmesg			       systemd-cat
+ seq			      sg_format			    delpart			       systemd-ask-password
+ runcon			      sg_emc_trespass		    chrt			       systemd-analyze
+ rmdir			      sg_decode_sense		    choom			       systemd
+ rm			      sg_dd			    addpart			       systemctl
+ realpath		      sg_copy_results		    landscape-sysinfo		       resolvectl
+ readlink		      sg_compare_and_write	    pkttyagent			       networkctl
+ pwd			      sg_bg_ctl			    pkexec			       loginctl
+ ptx			      scsi_temperature		    pkcheck			       localectl
+ printf			      scsi_stop			    pkaction			       journalctl
+ printenv		      scsi_start		    boltctl			       hostnamectl
+ pr			      scsi_satl			    x86_64-linux-gnu-gcov-tool-9       busctl
+ pinky			      scsi_ready		    x86_64-linux-gnu-gcov-dump-9       bootctl
+ pathchk		      scsi_readcap		    x86_64-linux-gnu-gcov-9	       ubuntu-bug
+ paste			      scsi_mandat		    x86_64-linux-gnu-gcc-ranlib-9      oem-getlogs
+ od			      scsi_logging_level	    x86_64-linux-gnu-gcc-nm-9	       apport-unpack
+ numfmt			      rescan-scsi-bus.sh	    x86_64-linux-gnu-gcc-ar-9	       apport-collect
+ nproc			      whatis			    x86_64-linux-gnu-gcc-9	       apport-cli
+ nohup			      manpath			    x86_64-linux-gnu-g++-9	       apport-bug
+ nl			      mandb			    x86_64-linux-gnu-cpp-9	       vmware-xferlogs
+ nice			      man-recode		    gcov-tool-9			       vmware-vmblock-fuse
+ mv			      man			    gcov-dump-9			       vmware-vgauth-cmd
+ mktemp			      lexgrog			    gcov-9			       vmware-toolbox-cmd
+ mknod			      catman			    gcc-ranlib-9		       vmware-rpctool
+ mkfifo			      apropos			    gcc-nm-9			       vmware-namespace-cmd
+ mkdir			      vcs-run			    gcc-ar-9			       vmware-hgfsclient
+ md5sum.textutils	      growpart			    gcc-9			       vmware-checkvm
+ md5sum			      ec2metadata		    g++-9			       vmware-alias-import
+ ls			      tset			    cpp-9			       vmtoolsd
+ logname		      tput			    sbverify			       vmhgfs-fuse
+ ln			      toe			    sbvarsign			       vm-support
+ link			      tic			    sbsign			       VGAuthService
+ join			      tabs			    sbsiglist			       nsupdate
+ install		      reset			    sbkeysync			       nslookup
+ id			      infotocap			    sbattach			       mdig
+ hostid			      infocmp			    kmodsign			       host
+ head			      clear			    tar				       dig
+ groups			      captoinfo			    twistd3			       delv
+ fold			      iptables-xml		    twist3			       zipdetails
+ fmt			      ssh-import-id-lp		    trial3			       xsubpp
+ false			      ssh-import-id-gh		    tkconch3			       splain
+ factor			      ssh-import-id		    pyhtmlizer3			       shasum
+ expr			      xwininfo			    mailmail3			       ptargrep
+ expand			      xvinfo			    conch3			       ptardiff
+ env			      xprop			    ckeygen3			       ptar
+ echo			      xmessage			    cftp3			       prove
+ du			      xlsfonts			    ssh-keyscan			       podselect
+ dirname		      xlsclients		    ssh-keygen			       podchecker
+ dircolors		      xlsatoms			    ssh-argv0			       pod2usage
+ dir			      xkill			    ssh-agent			       pod2text
+ df			      xfontsel			    ssh-add			       pod2man
+ dd			      xfd			    ssh				       pod2html
+ date			      xev			    slogin			       pl2pm
+ cut			      xdriinfo			    sftp			       piconv
+ csplit			      xdpyinfo			    scp				       perlthanks
+ cp			      viewres			    zdump			       perlivp
+ comm			      luit			    tzselect			       perlbug
+ cksum			      listres			    sprof			       perl5.30.0
+ chown			      editres			    sotruss			       perl5.30-x86_64-linux-gnu
+ chmod			      appres			    rpcgen			       perl
+ chgrp			      ulockmgr_server		    pldd			       libnetcfg
+ chcon			      fusermount		    mtrace			       json_pp
+ cat			      nc.openbsd		    localedef			       instmodsh
+ basename		      python3			    locale			       h2xs
+ base64			      pygettext3		    ldd				       h2ph
+ base32			      pydoc3			    iconv			       encguess
+ b2sum			      py3versions		    getent			       enc2xs
+ arch			      py3compile		    getconf			       cpan5.30-x86_64-linux-gnu
+'['			      py3clean			    gencat			       cpan
+ jsonpatch-jsondiff	      pdb3			    catchsegv			       corelist
+ jsonpatch		      keyring			    mmcli			       zipinfo
+ bzmore			      x86_64-linux-gnu-gcov-tool    znew			       zipgrep
+ bzless			      x86_64-linux-gnu-gcov-dump    zmore			       unzipsfx
+ bzip2recover		      x86_64-linux-gnu-gcov	    zless			       unzip
+ bzip2			      x86_64-linux-gnu-gcc-ranlib   zgrep			       funzip
+ bzgrep			      x86_64-linux-gnu-gcc-nm	    zforce			       dbus-uuidgen
+ bzfgrep		      x86_64-linux-gnu-gcc-ar	    zfgrep			       dbus-update-activation-environment
+ bzegrep		      x86_64-linux-gnu-gcc	    zegrep			       dbus-send
+ bzdiff			      x86_64-linux-gnu-g++	    zdiff			       dbus-run-session
+ bzcmp			      x86_64-linux-gnu-cpp	    zcmp			       dbus-monitor
+ bzcat			      gcov-tool			    zcat			       dbus-launch
+ bunzip2		      gcov-dump			    uncompress			       dbus-daemon
+ fakeroot-tcp		      gcov			    gzip			       dbus-cleanup-sockets
+ fakeroot-sysv		      gcc-ranlib		    gzexe			       ntfswipe
+ faked-tcp		      gcc-nm			    gunzip			       ntfsusermap
+ faked-sysv		      gcc-ar			    xzmore			       ntfstruncate
+ usbreset		      gcc			    xzless			       ntfssecaudit
+ usbhid-dump		      g++			    xzgrep			       ntfsrecover
+ usb-devices		      cpp			    xzfgrep			       ntfsmove
+ lsusb			      troff			    xzegrep			       ntfsls
+ qrencode		      tbl			    xzdiff			       ntfsinfo
+ install-info		      soelim			    xzcmp			       ntfsfix
+ info			      preconv			    xzcat			       ntfsfallocate
+ ginstall-info		      pic			    xz				       ntfsdecrypt
+ see			      nroff			    unxz			       ntfscmp
+ run-mailcap		      neqn			    lzmainfo			       ntfscluster
+ print			      gtbl			    rbash			       ntfscat
+ edit			      grotty			    clear_console		       ntfs-3g.probe
+ compose		      grops			    bashbug			       ntfs-3g
+ cautious-launcher	      grog			    bash			       lowntfs-3g
+ perldoc		      groff			    networkd-dispatcher		       python3.8
+ gawk			      gpic			    unattended-upgrades		       pygettext3.8
+ ypdomainname		      geqn			    unattended-upgrade		       pydoc3.8
+ nisdomainname		      eqn			    apt-sortpkgs		       pdb3.8
+ hostname		      automat-visualize3	    apt-mark			       ubuntu-advantage
+ domainname		      ngettext			    apt-key			       ua
+ dnsdomainname		      gettext.sh		    apt-get			       pro
+ pstree.x11		      gettext			    apt-ftparchive		       cloud-init-per
+ pstree			      envsubst			    apt-extracttemplates	       ubuntu-core-launcher
+ pslog			      pinentry-curses		    apt-config			       snapfuse
+ prtstat		      telnet.netkit		    apt-cdrom			       snapctl
+ peekfd			      update-mime-database	    apt-cache			       snap
+ killall		      setupcon			    apt				       sg
+ fuser			      ckbcomp			    update-alternatives		       passwd
+ sensible-pager		      ul			    dpkg-vendor			       newgrp
+ sensible-editor	      printerbanner		    dpkg-trigger		       login
+ sensible-browser	      ncal			    dpkg-statoverride		       lastlog
+ select-editor		      lorder			    dpkg-split			       gpasswd
+ htop			      look			    dpkg-source			       faillog
+ which			      hexdump			    dpkg-shlibdeps		       expiry
+ tempfile		      hd			    dpkg-scansources		       chsh
+ savelog		      column			    dpkg-scanpackages		       chfn
+ run-parts		      colrm			    dpkg-query			       chage
+ ischroot		      colcrt			    dpkg-parsechangelog		       ubuntu-security-status
+ chardetect3		      col			    dpkg-name			       hwe-support-status
+ chardet3		      calendar			    dpkg-mergechangelogs	       dotnet
+ rgrep			      cal			    dpkg-maintscript-helper	       cloud-init
+ file			      bsd-write			    dpkg-gensymbols		       cloud-id
+ jsonschema		      bsd-from			    dpkg-gencontrol		       curl
+ jsonpointer		      kernel-install		    dpkg-genchanges		       xxd
+ dh_bash-completion	      rnano			    dpkg-genbuildinfo		       vimtutor
+ grep			      nano			    dpkg-divert			       vim.tiny
+ fgrep			      strace			    dpkg-distaddfile		       vim.basic
+ egrep			      aa-exec			    dpkg-deb			       git-upload-pack
+ helpztags		      aa-enabled		    dpkg-checkbuilddeps		       git-upload-archive
+ traceroute6.iputils	      wslview			    dpkg-buildpackage		       git-shell
+ tracepath		      wslvar			    dpkg-buildflags		       git-receive-pack
+ ping6			      wslusc			    dpkg-architecture		       git
+ ping4			      wslupath			    dpkg			       wslpath
+ ping			      wslsys			    lsattr			       cc
+ miniterm		      wslfetch			    chattr			       c99
+ X11			      linux-update-symlinks	    fwupdtool			       c89
+ ss			      linux-check-removal	    fwupdmgr			       fakeroot
+ rtstat			      lesskey			    fwupdate			       c++
+[Parent]: Child 819 finished with status code 0. Onward!
+Selection #5: /usr
+Current reported directory: /usr
+[Parent]: I am waiting for PID 820 to finish.
+	[Child, PID: 820]: Executing 'ls -tr' command...
+thread-self  1	      mounts   zoneinfo     timer_list	schedstat     modules	  kpagecount   kcore	 interrupts   diskstats  cmdline    660
+sys	     cpuinfo  meminfo  vmstat	    sysvipc	sched_debug   misc	  kpagecgroup  kallsyms  fs	      devices	 bus	    744
+self	     loadavg  10       vmallocinfo  swaps	partitions    mdstat	  kmsg	       irq	 execdomains  crypto	 buddyinfo  820
+cgroups      uptime   371      version	    stat	pagetypeinfo  locks	  keys	       ioports	 driver       consoles	 acpi	    815
+filesystems  net      662      tty	    softirqs	mtrr	      kpageflags  key-users    iomem	 dma	      config.gz  661	    745
+[Parent]: Child 820 finished with status code 0. Onward!
+]0;flynn@DESKTOP-5JN7KRS: ~/CS3013/CS-3013/project_1[01;32mflynn@DESKTOP-5JN7KRS[00m:[01;34m~/CS3013/CS-3013/project_1[00m$ ls
+''$'\033\033'   [0m[01;32mexplorer[0m     generation.c   project1_script   seed.txt        seed_slug_1.txt   seed_slug_4.txt   [01;32mslugrace[0m
+ README.txt     explorer.c   generation.d   [01;32mprolific[0m          seed_reader.c   seed_slug_2.txt   [01;32mslug[0m              slugrace.c
+ [01;32ma.out[0m          [01;32mgeneration[0m   makefile       prolific.c        seed_reader.h   seed_slug_3.txt   slug.c
+]0;flynn@DESKTOP-5JN7KRS: ~/CS3013/CS-3013/project_1[01;32mflynn@DESKTOP-5JN7KRS[00m:[01;34m~/CS3013/CS-3013/project_1[00m$ ./slug 1
+[Slug PID: 822] Read seed value: 55555
+[Slug PID: 822] Delay time is 6 seconds. Coin flip: 0
+[Slug PID: 822] I'll get the job done eventually...
+[Slug PID: 822] Break time is over! I am running the 'last -i -x' command.
+
+wtmp begins Fri Jan 13 17:58:32 2023
+]0;flynn@DESKTOP-5JN7KRS: ~/CS3013/CS-3013/project_1[01;32mflynn@DESKTOP-5JN7KRS[00m:[01;34m~/CS3013/CS-3013/project_1[00m$ ./slug 3
+[Slug PID: 823] Read seed value: 12345
+[Slug PID: 823] Delay time is 6 seconds. Coin flip: 1
+[Slug PID: 823] I'll get the job done eventually...
+[Slug PID: 823] Break time is over! I am running the 'id -group' command.
+1000
+]0;flynn@DESKTOP-5JN7KRS: ~/CS3013/CS-3013/project_1[01;32mflynn@DESKTOP-5JN7KRS[00m:[01;34m~/CS3013/CS-3013/project_1[00m$ ./slugrace 
+Number of children: 4
+[Parent]: I forked off child 825.
+	[Child, PID: 825]: Executing './slug 1' command...
+[Parent]: I forked off child 826.
+[Parent]: I forked off child 827.
+	[Child, PID: 826]: Executing './slug 2' command...
+	[Child, PID: 827]: Executing './slug 3' command...
+[Parent]: I forked off child 828.
+[Slug PID: 825] Read seed value: 55555
+[Slug PID: 826] Read seed value: 56789
+[Slug PID: 826] Delay time is 4 seconds. Coin flip: 1
+[Slug PID: 826] I'll get the job done eventually...
+[Slug PID: 825] Delay time is 6 seconds. Coin flip: 0
+[Slug PID: 825] I'll get the job done eventually...
+[Slug PID: 827] Read seed value: 12345
+[Slug PID: 827] Delay time is 6 seconds. Coin flip: 1
+[Slug PID: 827] I'll get the job done eventually...
+	[Child, PID: 828]: Executing './slug 4' command...
+[Slug PID: 828] Read seed value: 456
+[Slug PID: 828] Delay time is 3 seconds. Coin flip: 1
+[Slug PID: 828] I'll get the job done eventually...
+The race is ongoing. The following children are still racing: 825 826 827 828 
+The race is ongoing. The following children are still racing: 825 826 827 828 
+The race is ongoing. The following children are still racing: 825 826 827 828 
+The race is ongoing. The following children are still racing: 825 826 827 828 
+The race is ongoing. The following children are still racing: 825 826 827 828 
+The race is ongoing. The following children are still racing: 825 826 827 828 
+The race is ongoing. The following children are still racing: 825 826 827 828 
+The race is ongoing. The following children are still racing: 825 826 827 828 
+The race is ongoing. The following children are still racing: 825 826 827 828 
+[Slug PID: 828] Break time is over! I am running the 'id -group' command.
+1000
+Child 828 has crossed the finish line! It took 3.002519 seconds
+The race is ongoing. The following children are still racing: 825 826 827 
+The race is ongoing. The following children are still racing: 825 826 827 
+The race is ongoing. The following children are still racing: 825 826 827 
+[Slug PID: 826] Break time is over! I am running the 'id -group' command.
+1000
+Child 826 has crossed the finish line! It took 4.000822 seconds
+The race is ongoing. The following children are still racing: 825 827 
+The race is ongoing. The following children are still racing: 825 827 
+The race is ongoing. The following children are still racing: 825 827 
+The race is ongoing. The following children are still racing: 825 827 
+The race is ongoing. The following children are still racing: 825 827 
+The race is ongoing. The following children are still racing: 825 827 
+[Slug PID: 825] Break time is over! I am running the 'last -i -x' command.
+[Slug PID: 827] Break time is over! I am running the 'id -group' command.
+
+wtmp begins Fri Jan 13 17:58:32 2023
+Child 825 has crossed the finish line! It took 6.000724 seconds
+1000
+Child 827 has crossed the finish line! It took 6.000988 seconds
+]0;flynn@DESKTOP-5JN7KRS: ~/CS3013/CS-3013/project_1[01;32mflynn@DESKTOP-5JN7KRS[00m:[01;34m~/CS3013/CS-3013/project_1[00m$ exit
+exit
+
+Script done on 2023-01-23 18:57:08-05:00 [COMMAND_EXIT_CODE="0"]

@@ -1,4 +1,5 @@
 Bernhardt Adler and Flynn Duniho
+We're using a Github repository to share code, since this wau we'll have access to version control, and be able to easily merge changes if we work separately. 
 
 Generation:
 This one was pretty easy to do. One mistake that I made was that I was decrementing the counter at the beginning of the while loop instead of the end, resulting in a duplicate childcount value and an off-by-one error.
