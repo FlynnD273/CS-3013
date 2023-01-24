@@ -8,3 +8,6 @@ For this project, I compiled and tested each stage, using printf to make sure th
 Slug:
 This took me forever to debug. Eventually I realized the issue was that I hadn't made the slug_seed files, so I was getting an error trying to read the seed. Once I figured that out, everything went pretty smoothly. 
 I started by testing the command-line arguments, and choosing the correct file path for a given command-line argument. After that I moved on to the rest of the program, using printf statements to make sure the state of the program was correct.
+
+Slug Race:
+This was fairly simple to make. The only hiccup was printing all the running processes, but I quickly realized that I separate them out into different printf statements inside a for loop, and now it works well. The example output didn't show that much precision for the running time of the slugs, so I think maybe adding the nanoseconds wasn't necessary. 
