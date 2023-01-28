@@ -18,7 +18,7 @@ pthread_t largethreads[LARGE_COUNT];
 pthread_t smallthreads[SMALL_COUNT];
 
 int get_small_plane_number(int i) {
-	return i + LARGE_COUNT + 1;
+	return i + LARGE_COUNT;
 }
 
 int await_runway_large(int i) {
