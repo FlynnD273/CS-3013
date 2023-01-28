@@ -15,14 +15,11 @@ int shortpaths[][2] = { {1, 2}, {1, 4}, {2, 1}, {2, 3}, {3, 2}, {3, 4}, {3, 5}, 
 pthread_t largethreads[LARGE_COUNT];
 pthread_t smallthreads[SMALL_COUNT];
 
-sem_t printlock;
-
 void *run_large_plane(void *arg) {
 	long long int i = (long long int)arg;
 	usleep(rand() % 1000);
-	sem_wait(&printlock);
+
 	printf("This is large plane at index %lld\n", i);
-	sem_post(&printlock);
 	return (void*)0;
 }
 
@@ -34,9 +31,8 @@ int spawn_large_plane(long long int i) {
 void *run_small_plane(void *arg) {
 	long long int i = (long long int)arg;
 	usleep(rand() % 1000);
-	sem_wait(&printlock);
+
 	printf("This is small plane at index %lld\n", i);
-	sem_post(&printlock);
 	return (void*)0;
 }
 
@@ -47,8 +43,6 @@ int spawn_small_plane(long long int i) {
 
 int main () {
 	srand(readseed("seed.txt"));
-
-	sem_init(&printlock, 0, 1);
 
 	int r = 0;
 
