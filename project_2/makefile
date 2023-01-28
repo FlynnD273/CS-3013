@@ -1,5 +1,5 @@
 CC= gcc
-CFLAGS= seed_reader.c -I.
+CFLAGS= seed_reader.c -I. -pthread
 RM= rm -vf   
 SRCFILES= $(filter-out seed_reader.c, $(wildcard *.c))
 PROGFILES= $(patsubst %.c, %, $(SRCFILES))
