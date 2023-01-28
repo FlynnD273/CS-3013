@@ -3,17 +3,15 @@ CFLAGS= seed_reader.c -I. -pthread
 RM= rm -vf   
 SRCFILES= $(filter-out seed_reader.c, $(wildcard *.c))
 PROGFILES= $(patsubst %.c, %, $(SRCFILES))
+OFILES= $(patsubst %.c, %.o, $(SRCFILES))
+DFILES= $(patsubst %.c, %.d, $(SRCFILES))
 
 
 all: $(PROGFILES)
 
-slugrace: slug.c slugrace.c seed_reader.c
-	make slug
-	$(CC) $(CFLAGS) slugrace.c -o slugrace
-
 clean:
-	$(RM) $(PROGFILES)  adler_duniho_project1.zip
+	$(RM) $(PROGFILES) $(OFILES) $(DFILES)  adler_duniho_project2.zip
 
 zip:
 	make clean
-	zip adler_duniho_project1 *
+	zip adler_duniho_project2 *
