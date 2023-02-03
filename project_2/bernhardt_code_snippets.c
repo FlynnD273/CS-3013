@@ -33,11 +33,16 @@ bool awaittakeoff() {
 		sequence = shortpaths[rand() % 14];
 	bool clear = false;
 	//maybe put some sort of wait here to allow others to check in sequence, to avoid critical region shenanigans
+	int sleeptime = 1000000;
 	while (!clear) {
+		if (sleeptime == 0)
+			sleeptime = 100000;
+		usleep(sleeptime);
 		clear = true;
 		for (int i = 0; clear && sequence[i]; i++) //this whole loop is overly clever and should probably not actually be used, i just thought it was cool
 			if (!regionsclear[i])
 				clear = false;
+		sleeptime = sleeptime - 100000; //check faster over time so planes waiting longer have a chance
 	}
 	return true;
 }
