@@ -1,0 +1,3 @@
+This problem consists of two types of planes, big and small. There is a runway with 6 regions in it that the planes land on. The large planes need 3 regions to land and take off, and the small planes only need 2. Both types of planes follow the same path. 
+
+The planes will idle at the terminal for a random amount of time. Then it'll decide on a path to take through the airport, waiting for a random amount of time in each region before taking off. Then after flying for a random amount of time, it'll land again and use another random path on the runway. After it lands, it'll go back to the terminal and start all over again. Each airplane does this all at the same time, and each plane can only go on a path that isn't being used by any other plane. 

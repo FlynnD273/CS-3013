@@ -159,7 +159,6 @@ void *run_small(void *arg) {
 		fly_small(i);
 		path_index = await_land_small(i);
 		land_small(i, path_index);
-
 	}
 }
 
