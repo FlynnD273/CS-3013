@@ -7,21 +7,17 @@
 #include "seed_reader.h"
 
 //just listing out all the possible paths a small or large plane could use to take off, and storing them in an array for easy random access
-int longpaths[][3] = { {1, 4, 6}, {6, 4, 1}, {2, 3, 5}, {5, 3, 2} };
-int shortpaths[][2] = { {1, 2}, {1, 4}, {2, 1}, {2, 3}, {3, 2}, {3, 4}, {3, 5}, {4, 1}, {4, 3}, {4, 6}, {5, 3}, {5, 6}, {6, 4}, {6, 5} };
+int longpaths[][3] = { {0, 3, 5}, {5, 3, 0}, {1, 2, 4}, {4, 2, 1} };
+int shortpaths[][2] = { {0, 1}, {0, 3}, {1, 0}, {1, 2}, {2, 1}, {2, 3}, {2, 4}, {3, 0}, {3, 2}, {3, 5}, {4, 2}, {4, 5}, {5, 3}, {5, 4} };
 
-// Initialize to -1 at the start. Set this to the plane number that it's reserved for.
-//int regions[6] = {-1, -1, -1, -1, -1, -1};
-
-sem_t regions [7];
+//region locks
+sem_t regions [6];
 
 #define LARGE_COUNT 15
 #define SMALL_COUNT 30
 
 pthread_t largethreads[LARGE_COUNT];
 pthread_t smallthreads[SMALL_COUNT];
-
-//sem_t s;
 
 int get_small_plane_number(int i) {
 	return i + LARGE_COUNT;
@@ -33,25 +29,28 @@ int await_runway_large(int i) {
 	bool clear = false;
 	while (!clear) {
 		sem_wait(&regions[longpaths[sequence][0]]);
-		if (sem_trywait(&regions[longpaths[sequence][1]]) == 0)
-			if (sem_trywait(&regions[longpaths[sequence][2]]) == 0)
+		if (sem_trywait(&regions[longpaths[sequence][1]]) == 0) {
+			if (sem_trywait(&regions[longpaths[sequence][2]]) == 0) {
 				clear = true;
+			}
 			else {
 				sem_post(&regions[longpaths[sequence][0]]);
 				sem_post(&regions[longpaths[sequence][1]]);
 			}
-		else
+		}
+		else {
 			sem_post(&regions[longpaths[sequence][0]]);
-	} //trywait version - sequential wait is in small version
+		}
+	} 
 	
 	
 	return sequence;
 }
 
 void idle_large(int i) {
-	int delay = ((rand() % 50) + 5) * 1000;
-	printf("Plane #%d (Large) is idling at the terminal for %d microseconds\n", i, delay);
-	usleep(delay);
+	int delay = (rand() % 4) + 1;
+	printf("Plane #%d (Large) is idling at the terminal for %d seconds\n", i, delay);
+	sleep(delay);
 }
 
 int await_takeoff_large(int i) {
@@ -64,18 +63,18 @@ void takeoff_large(int i, int path_index) {
 	int delay;
 	printf("Plane #%d (Large) is taking off on runway regions %i, %i, and %i\n", i, longpaths[path_index][0], longpaths[path_index][1], longpaths[path_index][2]);
 	for (int j = 0; j < 3; j++) {
-		printf("Plane #%i (Large) has entered region %i while taking off\n", i, longpaths[path_index][j]);
-		delay = ((rand() % 50) + 5) * 1000;
-		usleep(delay);
+		delay = (rand() % 4) + 1;
+		printf("Plane #%i (Large) has entered region %i while taking off\nWaiting %i seconds\n", i, longpaths[path_index][j], delay);
+		sleep(delay);
 		sem_post(&regions[longpaths[path_index][j]]);
 	}
 	printf("Plane #%i (Large) has taken off\n", i);
 }
 
 void fly_large(int i) {
-	int delay = ((rand() % 50) + 5) * 1000;
-	printf("Plane #%d (Large) is flying for %d microseconds\n", i, delay);
-	usleep(delay);
+	int delay = (rand() % 4) + 4;
+	printf("Plane #%d (Large) is flying for %d seconds\n", i, delay);
+	sleep(delay);
 }
 
 int await_land_large(int i) {
@@ -88,9 +87,9 @@ void land_large(int i, int path_index) {
 	int delay;
 	printf("Plane #%d (Large) is landing on runway regions %i, %i, and %i\n", i, longpaths[path_index][0], longpaths[path_index][1], longpaths[path_index][2]);
 	for (int j = 0; j < 3; j++) {
-		printf("Plane #%i (Large) has entered region %i while landing\n", i, longpaths[path_index][j]);
-		delay = ((rand() % 50) + 5) * 1000;
-		usleep(delay);
+		delay = (rand() % 4) + 1;
+		printf("Plane #%i (Large) has entered region %i while landing\nWaiting for %i seconds\n", i, longpaths[path_index][j], delay);
+		sleep(delay);
 		sem_post(&regions[longpaths[path_index][j]]);
 	}
 	printf("Plane #%i (Large) has landed\n", i);
@@ -98,9 +97,7 @@ void land_large(int i, int path_index) {
 
 void *run_large(void *arg) {
 	int i = (long long int)arg;
-	usleep(rand() % 1000);
 
-	printf("This is large plane at index %d\n", i);
 	int path_index;
 	while (true) {
 		idle_large(i);
@@ -123,25 +120,20 @@ int await_runway_small(int i) {
 	bool clear = false;
 	while (!clear) {
 		sem_wait(&regions[shortpaths[sequence][0]]);
-		if (sem_trywait(&regions[shortpaths[sequence][1]]) == 0)
+		if (sem_trywait(&regions[shortpaths[sequence][1]]) == 0) {
 			clear = true;
-		else
+		}
+		else {
 			sem_post(&regions[shortpaths[sequence][0]]);
-	} //trywait version
-	
-	
-	/*sem_wait(&regions[shortpaths[sequence][0]]);
-	printf("Plane #%i has claimed region %i, now waiting for region %i\n", get_small_plane_number(i), shortpaths[sequence][0], shortpaths[sequence][1]);
-	sem_wait(&regions[shortpaths[sequence][1]]);*/
-	//sequential wait version
-	
+		}
+	} 
 	return sequence;
 }
 
 void idle_small(int i) {
-	int delay = ((rand() % 50) + 5) * 1000;
-	printf("Plane #%d (Small) is idling at the terminal for %d microseconds\n", get_small_plane_number(i), delay);
-	usleep(delay);
+	int delay = (rand() % 4) + 1;
+	printf("Plane #%d (Small) is idling at the terminal for %d seconds\n", get_small_plane_number(i), delay);
+	sleep(delay);
 }
 
 int await_takeoff_small(int i) {
@@ -154,18 +146,18 @@ void takeoff_small(int i, int path_index) {
 	int delay;
 	printf("Plane #%d (Small) is taking off on runway regions %i and %i\n", get_small_plane_number(i), shortpaths[path_index][0], shortpaths[path_index][1]);
 	for (int j = 0; j < 2; j++) {
-		printf("Plane #%i (Small) has entered region %i while taking off\n", get_small_plane_number(i), shortpaths[path_index][j]);
-		delay = ((rand() % 50) + 5) * 1000;
-		usleep(delay);
+		delay = (rand() % 4) + 1;
+		printf("Plane #%i (Small) has entered region %i while taking off\nWaiting %i seconds\n", get_small_plane_number(i), shortpaths[path_index][j], delay);
+		sleep(delay);
 		sem_post(&regions[shortpaths[path_index][j]]);
 	}
 	printf("Plane #%i (Small) has taken off\n", get_small_plane_number(i));
 }
 
 void fly_small(int i) {
-	int delay = ((rand() % 50) + 5) * 1000;
-	printf("Plane #%d (Small) is flying for %d microseconds\n", get_small_plane_number(i), delay);
-	usleep(delay);
+	int delay = (rand() % 4) + 1;
+	printf("Plane #%d (Small) is flying for %d seconds\n", get_small_plane_number(i), delay);
+	sleep(delay);
 }
 
 int await_land_small(int i) {
@@ -178,9 +170,9 @@ void land_small(int i, int path_index) {
 	int delay;
 	printf("Plane #%d (Small) is landing on runway regions %i and %i\n", get_small_plane_number(i), shortpaths[path_index][0], shortpaths[path_index][1]);
 	for (int j = 0; j < 2; j++) {
-		printf("Plane #%i (Small) has entered region %i while landing\n", get_small_plane_number(i), shortpaths[path_index][j]);
-		delay = ((rand() % 50) + 5) * 1000;
-		usleep(delay);
+		delay = (rand() % 4) + 1;
+		printf("Plane #%i (Small) has entered region %i while landing\nWaiting for %i seconds\n", get_small_plane_number(i), shortpaths[path_index][j], delay);
+		sleep(delay);
 		sem_post(&regions[shortpaths[path_index][j]]);
 	}
 	printf("Plane #%i (Small) has landed\n", get_small_plane_number(i));
@@ -188,9 +180,6 @@ void land_small(int i, int path_index) {
 
 void *run_small(void *arg) {
 	int i = (long long int)arg;
-	usleep(rand() % 1000);
-
-	printf("This is small plane at index %d\n", get_small_plane_number(i));
 	int path_index;
 	while (true) {
 		idle_small(i);
@@ -211,9 +200,8 @@ int main () {
 	srand(readseed("seed.txt"));
 
 	int r = 0;
-	//sem_init(&s, 0, 1);
 	for (int i = 0; i < 6; i++)
-		sem_init(&regions[i+1], 0, 1);
+		sem_init(&regions[i], 0, 1);
 
 	for(int i = 0; i < LARGE_COUNT; i++) {
 		r = spawn_large(i);

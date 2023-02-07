@@ -1,0 +1,682 @@
+Script started on 2023-02-06 20:05:44-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+]0;flynn@Flynn-Desktop: ~/CS3013/CS-3013/project_2[01;32mflynn@Flynn-Desktop[00m:[01;34m~/CS3013/CS-3013/project_2[00m$ make g[Kflight
+gcc seed_reader.c -I. -pthread    flight.c   -o flight
+]0;flynn@Flynn-Desktop: ~/CS3013/CS-3013/project_2[01;32mflynn@Flynn-Desktop[00m:[01;34m~/CS3013/CS-3013/project_2[00m$ ./flight
+Plane #0 (Large) is idling at the terminal for 4 seconds
+Plane #1 (Large) is idling at the terminal for 2 seconds
+Plane #2 (Large) is idling at the terminal for 2 seconds
+Plane #3 (Large) is idling at the terminal for 4 seconds
+Plane #4 (Large) is idling at the terminal for 2 seconds
+Plane #5 (Large) is idling at the terminal for 1 seconds
+Plane #6 (Large) is idling at the terminal for 2 seconds
+Plane #7 (Large) is idling at the terminal for 3 seconds
+Plane #8 (Large) is idling at the terminal for 1 seconds
+Plane #9 (Large) is idling at the terminal for 1 seconds
+Plane #10 (Large) is idling at the terminal for 4 seconds
+Plane #11 (Large) is idling at the terminal for 2 seconds
+Plane #12 (Large) is idling at the terminal for 2 seconds
+Plane #13 (Large) is idling at the terminal for 2 seconds
+Plane #14 (Large) is idling at the terminal for 3 seconds
+Plane #15 (Small) is idling at the terminal for 2 seconds
+Plane #16 (Small) is idling at the terminal for 3 seconds
+Plane #17 (Small) is idling at the terminal for 1 seconds
+Plane #18 (Small) is idling at the terminal for 2 seconds
+Plane #19 (Small) is idling at the terminal for 1 seconds
+Plane #20 (Small) is idling at the terminal for 2 seconds
+Plane #21 (Small) is idling at the terminal for 4 seconds
+Plane #22 (Small) is idling at the terminal for 1 seconds
+Plane #24 (Small) is idling at the terminal for 4 seconds
+Plane #23 (Small) is idling at the terminal for 3 seconds
+Plane #26 (Small) is idling at the terminal for 4 seconds
+Plane #25 (Small) is idling at the terminal for 4 seconds
+Plane #27 (Small) is idling at the terminal for 3 seconds
+Plane #28 (Small) is idling at the terminal for 2 seconds
+Plane #29 (Small) is idling at the terminal for 4 seconds
+Plane #30 (Small) is idling at the terminal for 2 seconds
+Plane #31 (Small) is idling at the terminal for 1 seconds
+Plane #32 (Small) is idling at the terminal for 2 seconds
+Plane #33 (Small) is idling at the terminal for 4 seconds
+Plane #34 (Small) is idling at the terminal for 4 seconds
+Plane #35 (Small) is idling at the terminal for 3 seconds
+Plane #36 (Small) is idling at the terminal for 4 seconds
+Plane #37 (Small) is idling at the terminal for 1 seconds
+Plane #38 (Small) is idling at the terminal for 2 seconds
+Plane #39 (Small) is idling at the terminal for 4 seconds
+Plane #40 (Small) is idling at the terminal for 1 seconds
+Plane #42 (Small) is idling at the terminal for 1 seconds
+Plane #41 (Small) is idling at the terminal for 1 seconds
+Plane #43 (Small) is idling at the terminal for 2 seconds
+Plane #44 (Small) is idling at the terminal for 2 seconds
+Plane #5 (Large) is preparing to take off
+Plane #9 (Large) is preparing to take off
+Plane #9 (Large) is waiting for runway regions 1, 2, and 4
+Plane #9 (Large) is taking off on runway regions 1, 2, and 4
+Plane #9 (Large) has entered region 1 while taking off
+Waiting 4 seconds
+Plane #8 (Large) is preparing to take off
+Plane #8 (Large) is waiting for runway regions 1, 2, and 4
+Plane #5 (Large) is waiting for runway regions 1, 2, and 4
+Plane #17 (Small) is preparing to take off
+Plane #17 (Small) is waiting for runway regions 5 and 4
+Plane #19 (Small) is preparing to take off
+Plane #19 (Small) is waiting for runway regions 5 and 4
+Plane #22 (Small) is preparing to take off
+Plane #22 (Small) is waiting for runway regions 0 and 3
+Plane #22 (Small) is taking off on runway regions 0 and 3
+Plane #22 (Small) has entered region 0 while taking off
+Waiting 3 seconds
+Plane #31 (Small) is preparing to take off
+Plane #31 (Small) is waiting for runway regions 0 and 3
+Plane #37 (Small) is preparing to take off
+Plane #37 (Small) is waiting for runway regions 3 and 0
+Plane #40 (Small) is preparing to take off
+Plane #40 (Small) is waiting for runway regions 1 and 2
+Plane #42 (Small) is preparing to take off
+Plane #42 (Small) is waiting for runway regions 2 and 3
+Plane #41 (Small) is preparing to take off
+Plane #41 (Small) is waiting for runway regions 3 and 2
+Plane #1 (Large) is preparing to take off
+Plane #4 (Large) is preparing to take off
+Plane #4 (Large) is waiting for runway regions 0, 3, and 5
+Plane #2 (Large) is preparing to take off
+Plane #2 (Large) is waiting for runway regions 0, 3, and 5
+Plane #1 (Large) is waiting for runway regions 4, 2, and 1
+Plane #6 (Large) is preparing to take off
+Plane #6 (Large) is waiting for runway regions 5, 3, and 0
+Plane #11 (Large) is preparing to take off
+Plane #11 (Large) is waiting for runway regions 0, 3, and 5
+Plane #12 (Large) is preparing to take off
+Plane #12 (Large) is waiting for runway regions 5, 3, and 0
+Plane #13 (Large) is preparing to take off
+Plane #13 (Large) is waiting for runway regions 0, 3, and 5
+Plane #15 (Small) is preparing to take off
+Plane #15 (Small) is waiting for runway regions 3 and 5
+Plane #18 (Small) is preparing to take off
+Plane #18 (Small) is waiting for runway regions 5 and 4
+Plane #20 (Small) is preparing to take off
+Plane #20 (Small) is waiting for runway regions 1 and 2
+Plane #28 (Small) is preparing to take off
+Plane #28 (Small) is waiting for runway regions 2 and 3
+Plane #30 (Small) is preparing to take off
+Plane #30 (Small) is waiting for runway regions 4 and 2
+Plane #32 (Small) is preparing to take off
+Plane #32 (Small) is waiting for runway regions 5 and 3
+Plane #38 (Small) is preparing to take off
+Plane #38 (Small) is waiting for runway regions 3 and 0
+Plane #43 (Small) is preparing to take off
+Plane #43 (Small) is waiting for runway regions 4 and 2
+Plane #44 (Small) is preparing to take off
+Plane #44 (Small) is waiting for runway regions 2 and 4
+Plane #7 (Large) is preparing to take off
+Plane #7 (Large) is waiting for runway regions 0, 3, and 5
+Plane #14 (Large) is preparing to take off
+Plane #14 (Large) is waiting for runway regions 5, 3, and 0
+Plane #16 (Small) is preparing to take off
+Plane #16 (Small) is waiting for runway regions 1 and 0
+Plane #23 (Small) is preparing to take off
+Plane #23 (Small) is waiting for runway regions 3 and 2
+Plane #27 (Small) is preparing to take off
+Plane #27 (Small) is waiting for runway regions 2 and 1
+Plane #35 (Small) is preparing to take off
+Plane #35 (Small) is waiting for runway regions 4 and 2
+Plane #0 (Large) is preparing to take off
+Plane #0 (Large) is waiting for runway regions 5, 3, and 0
+Plane #3 (Large) is preparing to take off
+Plane #3 (Large) is waiting for runway regions 0, 3, and 5
+Plane #10 (Large) is preparing to take off
+Plane #10 (Large) is waiting for runway regions 1, 2, and 4
+Plane #21 (Small) is preparing to take off
+Plane #21 (Small) is waiting for runway regions 4 and 2
+Plane #26 (Small) is preparing to take off
+Plane #26 (Small) is waiting for runway regions 1 and 2
+Plane #24 (Small) is preparing to take off
+Plane #24 (Small) is waiting for runway regions 1 and 2
+Plane #25 (Small) is preparing to take off
+Plane #25 (Small) is waiting for runway regions 3 and 2
+Plane #22 (Small) has entered region 3 while taking off
+Waiting 2 seconds
+Plane #29 (Small) is preparing to take off
+Plane #29 (Small) is waiting for runway regions 4 and 2
+Plane #33 (Small) is preparing to take off
+Plane #33 (Small) is waiting for runway regions 4 and 5
+Plane #34 (Small) is preparing to take off
+Plane #34 (Small) is waiting for runway regions 5 and 3
+Plane #36 (Small) is preparing to take off
+Plane #36 (Small) is waiting for runway regions 0 and 1
+Plane #39 (Small) is preparing to take off
+Plane #39 (Small) is waiting for runway regions 2 and 4
+Plane #36 (Small) is taking off on runway regions 0 and 1
+Plane #36 (Small) has entered region 0 while taking off
+Waiting 2 seconds
+Plane #9 (Large) has entered region 2 while taking off
+Waiting 3 seconds
+Plane #34 (Small) is taking off on runway regions 5 and 3
+Plane #34 (Small) has entered region 5 while taking off
+Waiting 3 seconds
+Plane #22 (Small) has taken off
+Plane #22 (Small) is flying for 2 seconds
+Plane #36 (Small) has entered region 1 while taking off
+Waiting 1 seconds
+Plane #9 (Large) has entered region 4 while taking off
+Waiting 2 seconds
+Plane #27 (Small) is taking off on runway regions 2 and 1
+Plane #27 (Small) has entered region 2 while taking off
+Waiting 1 seconds
+Plane #36 (Small) has taken off
+Plane #36 (Small) is flying for 2 seconds
+Plane #22 (Small) is preparing to land
+Plane #22 (Small) is waiting for runway regions 2 and 3
+Plane #34 (Small) has entered region 3 while taking off
+Waiting 4 seconds
+Plane #27 (Small) has entered region 1 while taking off
+Waiting 2 seconds
+Plane #18 (Small) is taking off on runway regions 5 and 4
+Plane #18 (Small) has entered region 5 while taking off
+Waiting 2 seconds
+Plane #9 (Large) has taken off
+Plane #9 (Large) is flying for 7 seconds
+Plane #36 (Small) is preparing to land
+Plane #36 (Small) is waiting for runway regions 2 and 3
+Plane #27 (Small) has taken off
+Plane #27 (Small) is flying for 2 seconds
+Plane #40 (Small) is taking off on runway regions 1 and 2
+Plane #40 (Small) has entered region 1 while taking off
+Waiting 2 seconds
+Plane #18 (Small) has entered region 4 while taking off
+Waiting 4 seconds
+Plane #3 (Large) is taking off on runway regions 0, 3, and 5
+Plane #3 (Large) has entered region 0 while taking off
+Waiting 4 seconds
+Plane #34 (Small) has taken off
+Plane #34 (Small) is flying for 4 seconds
+Plane #27 (Small) is preparing to land
+Plane #27 (Small) is waiting for runway regions 4 and 5
+Plane #40 (Small) has entered region 2 while taking off
+Waiting 2 seconds
+Plane #24 (Small) is taking off on runway regions 1 and 2
+Plane #24 (Small) has entered region 1 while taking off
+Waiting 4 seconds
+Plane #40 (Small) has taken off
+Plane #40 (Small) is flying for 4 seconds
+Plane #18 (Small) has taken off
+Plane #18 (Small) is flying for 2 seconds
+Plane #9 (Large) is preparing to land
+Plane #9 (Large) is waiting for runway regions 0, 3, and 5
+Plane #34 (Small) is preparing to land
+Plane #34 (Small) is waiting for runway regions 2 and 3
+Plane #3 (Large) has entered region 3 while taking off
+Waiting 2 seconds
+Plane #18 (Small) is preparing to land
+Plane #18 (Small) is waiting for runway regions 3 and 5
+Plane #31 (Small) is taking off on runway regions 0 and 3
+Plane #31 (Small) has entered region 0 while taking off
+Waiting 2 seconds
+Plane #3 (Large) has entered region 5 while taking off
+Waiting 1 seconds
+Plane #24 (Small) has entered region 2 while taking off
+Waiting 4 seconds
+Plane #40 (Small) is preparing to land
+Plane #40 (Small) is waiting for runway regions 2 and 4
+Plane #27 (Small) is landing on runway regions 4 and 5
+Plane #27 (Small) has entered region 4 while landing
+Waiting for 3 seconds
+Plane #3 (Large) has taken off
+Plane #3 (Large) is flying for 5 seconds
+Plane #16 (Small) is taking off on runway regions 1 and 0
+Plane #16 (Small) has entered region 1 while taking off
+Waiting 1 seconds
+Plane #31 (Small) has entered region 3 while taking off
+Waiting 3 seconds
+Plane #16 (Small) has entered region 0 while taking off
+Waiting 3 seconds
+Plane #26 (Small) is taking off on runway regions 1 and 2
+Plane #26 (Small) has entered region 1 while taking off
+Waiting 1 seconds
+Plane #24 (Small) has taken off
+Plane #24 (Small) is flying for 2 seconds
+Plane #27 (Small) has entered region 5 while landing
+Waiting for 4 seconds
+Plane #31 (Small) has taken off
+Plane #31 (Small) is flying for 1 seconds
+Plane #26 (Small) has entered region 2 while taking off
+Waiting 2 seconds
+Plane #3 (Large) is preparing to land
+Plane #3 (Large) is waiting for runway regions 1, 2, and 4
+Plane #31 (Small) is preparing to land
+Plane #31 (Small) is waiting for runway regions 5 and 4
+Plane #24 (Small) is preparing to land
+Plane #24 (Small) is waiting for runway regions 3 and 2
+Plane #38 (Small) is taking off on runway regions 3 and 0
+Plane #38 (Small) has entered region 3 while taking off
+Waiting 4 seconds
+Plane #16 (Small) has taken off
+Plane #16 (Small) is flying for 2 seconds
+Plane #30 (Small) is taking off on runway regions 4 and 2
+Plane #30 (Small) has entered region 4 while taking off
+Waiting 4 seconds
+Plane #26 (Small) has taken off
+Plane #26 (Small) is flying for 4 seconds
+Plane #27 (Small) has landed
+Plane #27 (Small) is idling at the terminal for 1 seconds
+Plane #16 (Small) is preparing to land
+Plane #16 (Small) is waiting for runway regions 4 and 5
+Plane #27 (Small) is preparing to take off
+Plane #27 (Small) is waiting for runway regions 2 and 4
+Plane #32 (Small) is taking off on runway regions 5 and 3
+Plane #32 (Small) has entered region 5 while taking off
+Waiting 3 seconds
+Plane #38 (Small) has entered region 0 while taking off
+Waiting 4 seconds
+Plane #30 (Small) has entered region 2 while taking off
+Waiting 2 seconds
+Plane #26 (Small) is preparing to land
+Plane #26 (Small) is waiting for runway regions 3 and 0
+Plane #3 (Large) is landing on runway regions 1, 2, and 4
+Plane #3 (Large) has entered region 1 while landing
+Waiting for 4 seconds
+Plane #30 (Small) has taken off
+Plane #30 (Small) is flying for 3 seconds
+Plane #32 (Small) has entered region 3 while taking off
+Waiting 2 seconds
+Plane #38 (Small) has taken off
+Plane #38 (Small) is flying for 4 seconds
+Plane #7 (Large) is taking off on runway regions 0, 3, and 5
+Plane #7 (Large) has entered region 0 while taking off
+Waiting 4 seconds
+Plane #32 (Small) has taken off
+Plane #32 (Small) is flying for 1 seconds
+Plane #30 (Small) is preparing to land
+Plane #30 (Small) is waiting for runway regions 4 and 2
+Plane #32 (Small) is preparing to land
+Plane #32 (Small) is waiting for runway regions 0 and 3
+Plane #3 (Large) has entered region 2 while landing
+Waiting for 3 seconds
+Plane #38 (Small) is preparing to land
+Plane #38 (Small) is waiting for runway regions 4 and 2
+Plane #7 (Large) has entered region 3 while taking off
+Waiting 1 seconds
+Plane #32 (Small) is landing on runway regions 0 and 3
+Plane #32 (Small) has entered region 0 while landing
+Waiting for 1 seconds
+Plane #7 (Large) has entered region 5 while taking off
+Waiting 3 seconds
+Plane #20 (Small) is taking off on runway regions 1 and 2
+Plane #20 (Small) has entered region 1 while taking off
+Waiting 4 seconds
+Plane #3 (Large) has entered region 4 while landing
+Waiting for 3 seconds
+Plane #32 (Small) has entered region 3 while landing
+Waiting for 3 seconds
+Plane #7 (Large) has taken off
+Plane #7 (Large) is flying for 4 seconds
+Plane #3 (Large) has landed
+Plane #3 (Large) is idling at the terminal for 1 seconds
+Plane #19 (Small) is taking off on runway regions 5 and 4
+Plane #19 (Small) has entered region 5 while taking off
+Waiting 3 seconds
+Plane #20 (Small) has entered region 2 while taking off
+Waiting 1 seconds
+Plane #3 (Large) is preparing to take off
+Plane #3 (Large) is waiting for runway regions 0, 3, and 5
+Plane #32 (Small) has landed
+Plane #32 (Small) is idling at the terminal for 4 seconds
+Plane #26 (Small) is landing on runway regions 3 and 0
+Plane #26 (Small) has entered region 3 while landing
+Waiting for 1 seconds
+Plane #20 (Small) has taken off
+Plane #20 (Small) is flying for 4 seconds
+Plane #28 (Small) is taking off on runway regions 2 and 3
+Plane #28 (Small) has entered region 2 while taking off
+Waiting 4 seconds
+Plane #26 (Small) has entered region 0 while landing
+Waiting for 4 seconds
+Plane #19 (Small) has entered region 4 while taking off
+Waiting 4 seconds
+Plane #7 (Large) is preparing to land
+Plane #7 (Large) is waiting for runway regions 1, 2, and 4
+Plane #32 (Small) is preparing to take off
+Plane #32 (Small) is waiting for runway regions 1 and 2
+Plane #20 (Small) is preparing to land
+Plane #20 (Small) is waiting for runway regions 2 and 3
+Plane #32 (Small) is taking off on runway regions 1 and 2
+Plane #32 (Small) has entered region 1 while taking off
+Waiting 1 seconds
+Plane #26 (Small) has landed
+Plane #28 (Small) has entered region 3 while taking off
+Waiting 2 seconds
+Plane #26 (Small) is idling at the terminal for 4 seconds
+Plane #31 (Small) is landing on runway regions 5 and 4
+Plane #31 (Small) has entered region 5 while landing
+Waiting for 3 seconds
+Plane #19 (Small) has taken off
+Plane #19 (Small) is flying for 1 seconds
+Plane #32 (Small) has entered region 2 while taking off
+Waiting 4 seconds
+Plane #19 (Small) is preparing to land
+Plane #19 (Small) is waiting for runway regions 1 and 2
+Plane #28 (Small) has taken off
+Plane #28 (Small) is flying for 3 seconds
+Plane #37 (Small) is taking off on runway regions 3 and 0
+Plane #37 (Small) has entered region 3 while taking off
+Waiting 1 seconds
+Plane #37 (Small) has entered region 0 while taking off
+Waiting 2 seconds
+Plane #18 (Small) is landing on runway regions 3 and 5
+Plane #31 (Small) has entered region 4 while landing
+Waiting for 1 seconds
+Plane #18 (Small) has entered region 3 while landing
+Waiting for 1 seconds
+Plane #26 (Small) is preparing to take off
+Plane #26 (Small) is waiting for runway regions 4 and 5
+Plane #18 (Small) has entered region 5 while landing
+Waiting for 3 seconds
+Plane #31 (Small) has landed
+Plane #31 (Small) is idling at the terminal for 1 seconds
+Plane #1 (Large) is taking off on runway regions 4, 2, and 1
+Plane #1 (Large) has entered region 4 while taking off
+Waiting 4 seconds
+Plane #28 (Small) is preparing to land
+Plane #28 (Small) is waiting for runway regions 5 and 4
+Plane #32 (Small) has taken off
+Plane #32 (Small) is flying for 1 seconds
+Plane #37 (Small) has taken off
+Plane #37 (Small) is flying for 1 seconds
+Plane #31 (Small) is preparing to take off
+Plane #31 (Small) is waiting for runway regions 5 and 4
+Plane #32 (Small) is preparing to land
+Plane #32 (Small) is waiting for runway regions 0 and 3
+Plane #32 (Small) is landing on runway regions 0 and 3
+Plane #32 (Small) has entered region 0 while landing
+Waiting for 1 seconds
+Plane #37 (Small) is preparing to land
+Plane #37 (Small) is waiting for runway regions 5 and 3
+Plane #32 (Small) has entered region 3 while landing
+Waiting for 2 seconds
+Plane #18 (Small) has landed
+Plane #18 (Small) is idling at the terminal for 4 seconds
+Plane #17 (Small) is taking off on runway regions 5 and 4
+Plane #17 (Small) has entered region 5 while taking off
+Waiting 1 seconds
+Plane #1 (Large) has entered region 2 while taking off
+Waiting 2 seconds
+Plane #32 (Small) has landed
+Plane #32 (Small) is idling at the terminal for 3 seconds
+Plane #11 (Large) is taking off on runway regions 0, 3, and 5
+Plane #11 (Large) has entered region 0 while taking off
+Waiting 4 seconds
+Plane #17 (Small) has entered region 4 while taking off
+Waiting 2 seconds
+Plane #1 (Large) has entered region 1 while taking off
+Waiting 4 seconds
+Plane #18 (Small) is preparing to take off
+Plane #18 (Small) is waiting for runway regions 1 and 0
+Plane #40 (Small) is landing on runway regions 2 and 4
+Plane #40 (Small) has entered region 2 while landing
+Waiting for 2 seconds
+Plane #17 (Small) has taken off
+Plane #17 (Small) is flying for 4 seconds
+Plane #32 (Small) is preparing to take off
+Plane #32 (Small) is waiting for runway regions 2 and 3
+Plane #11 (Large) has entered region 3 while taking off
+Waiting 2 seconds
+Plane #40 (Small) has entered region 4 while landing
+Waiting for 3 seconds
+Plane #1 (Large) has taken off
+Plane #1 (Large) is flying for 6 seconds
+Plane #19 (Small) is landing on runway regions 1 and 2
+Plane #19 (Small) has entered region 1 while landing
+Waiting for 4 seconds
+Plane #17 (Small) is preparing to land
+Plane #17 (Small) is waiting for runway regions 2 and 1
+Plane #11 (Large) has entered region 5 while taking off
+Waiting 4 seconds
+Plane #40 (Small) has landed
+Plane #40 (Small) is idling at the terminal for 4 seconds
+Plane #19 (Small) has entered region 2 while landing
+Waiting for 4 seconds
+Plane #18 (Small) is taking off on runway regions 1 and 0
+Plane #18 (Small) has entered region 1 while taking off
+Waiting 1 seconds
+Plane #16 (Small) is landing on runway regions 4 and 5
+Plane #16 (Small) has entered region 4 while landing
+Waiting for 3 seconds
+Plane #11 (Large) has taken off
+Plane #11 (Large) is flying for 7 seconds
+Plane #18 (Small) has entered region 0 while taking off
+Waiting 1 seconds
+Plane #1 (Large) is preparing to land
+Plane #1 (Large) is waiting for runway regions 4, 2, and 1
+Plane #40 (Small) is preparing to take off
+Plane #40 (Small) is waiting for runway regions 3 and 0
+Plane #40 (Small) is taking off on runway regions 3 and 0
+Plane #40 (Small) has entered region 3 while taking off
+Waiting 1 seconds
+Plane #18 (Small) has taken off
+Plane #18 (Small) is flying for 3 seconds
+Plane #40 (Small) has entered region 0 while taking off
+Waiting 1 seconds
+Plane #41 (Small) is taking off on runway regions 3 and 2
+Plane #41 (Small) has entered region 3 while taking off
+Waiting 1 seconds
+Plane #19 (Small) has landed
+Plane #19 (Small) is idling at the terminal for 1 seconds
+Plane #16 (Small) has entered region 5 while landing
+Waiting for 2 seconds
+Plane #40 (Small) has taken off
+Plane #40 (Small) is flying for 4 seconds
+Plane #41 (Small) has entered region 2 while taking off
+Waiting 2 seconds
+Plane #19 (Small) is preparing to take off
+Plane #19 (Small) is waiting for runway regions 1 and 2
+Plane #18 (Small) is preparing to land
+Plane #18 (Small) is waiting for runway regions 3 and 5
+Plane #2 (Large) is taking off on runway regions 0, 3, and 5
+Plane #2 (Large) has entered region 0 while taking off
+Waiting 1 seconds
+Plane #16 (Small) has landed
+Plane #16 (Small) is idling at the terminal for 3 seconds
+Plane #19 (Small) is taking off on runway regions 1 and 2
+Plane #19 (Small) has entered region 1 while taking off
+Waiting 2 seconds
+Plane #41 (Small) has taken off
+Plane #41 (Small) is flying for 1 seconds
+Plane #2 (Large) has entered region 3 while taking off
+Waiting 1 seconds
+Plane #11 (Large) is preparing to land
+Plane #11 (Large) is waiting for runway regions 0, 3, and 5
+Plane #41 (Small) is preparing to land
+Plane #41 (Small) is waiting for runway regions 4 and 5
+Plane #2 (Large) has entered region 5 while taking off
+Waiting 2 seconds
+Plane #40 (Small) is preparing to land
+Plane #40 (Small) is waiting for runway regions 2 and 4
+Plane #19 (Small) has entered region 2 while taking off
+Waiting 2 seconds
+Plane #16 (Small) is preparing to take off
+Plane #16 (Small) is waiting for runway regions 0 and 3
+Plane #16 (Small) is taking off on runway regions 0 and 3
+Plane #16 (Small) has entered region 0 while taking off
+Waiting 1 seconds
+Plane #16 (Small) has entered region 3 while taking off
+Waiting 1 seconds
+Plane #26 (Small) is taking off on runway regions 4 and 5
+Plane #26 (Small) has entered region 4 while taking off
+Waiting 1 seconds
+Plane #2 (Large) has taken off
+Plane #2 (Large) is flying for 7 seconds
+Plane #19 (Small) has taken off
+Plane #19 (Small) is flying for 2 seconds
+Plane #17 (Small) is landing on runway regions 2 and 1
+Plane #17 (Small) has entered region 2 while landing
+Waiting for 3 seconds
+Plane #16 (Small) has taken off
+Plane #16 (Small) is flying for 3 seconds
+Plane #26 (Small) has entered region 5 while taking off
+Waiting 2 seconds
+Plane #19 (Small) is preparing to land
+Plane #19 (Small) is waiting for runway regions 0 and 3
+Plane #19 (Small) is landing on runway regions 0 and 3
+Plane #19 (Small) has entered region 0 while landing
+Waiting for 3 seconds
+Plane #33 (Small) is taking off on runway regions 4 and 5
+Plane #33 (Small) has entered region 4 while taking off
+Waiting 2 seconds
+Plane #26 (Small) has taken off
+Plane #26 (Small) is flying for 4 seconds
+Plane #16 (Small) is preparing to land
+Plane #16 (Small) is waiting for runway regions 2 and 3
+Plane #17 (Small) has entered region 1 while landing
+Waiting for 3 seconds
+Plane #27 (Small) is taking off on runway regions 2 and 4
+Plane #27 (Small) has entered region 2 while taking off
+Waiting 1 seconds
+Plane #33 (Small) has entered region 5 while taking off
+Waiting 4 seconds
+Plane #19 (Small) has entered region 3 while landing
+Waiting for 1 seconds
+Plane #27 (Small) has entered region 4 while taking off
+Waiting 1 seconds
+Plane #2 (Large) is preparing to land
+Plane #2 (Large) is waiting for runway regions 5, 3, and 0
+Plane #36 (Small) is landing on runway regions 2 and 3
+Plane #36 (Small) has entered region 2 while landing
+Waiting for 2 seconds
+Plane #19 (Small) has landed
+Plane #19 (Small) is idling at the terminal for 1 seconds
+Plane #26 (Small) is preparing to land
+Plane #26 (Small) is waiting for runway regions 4 and 2
+Plane #27 (Small) has taken off
+Plane #27 (Small) is flying for 3 seconds
+Plane #17 (Small) has landed
+Plane #17 (Small) is idling at the terminal for 2 seconds
+Plane #19 (Small) is preparing to take off
+Plane #19 (Small) is waiting for runway regions 1 and 0
+Plane #19 (Small) is taking off on runway regions 1 and 0
+Plane #19 (Small) has entered region 1 while taking off
+Waiting 3 seconds
+Plane #38 (Small) is landing on runway regions 4 and 2
+Plane #38 (Small) has entered region 4 while landing
+Waiting for 2 seconds
+Plane #36 (Small) has entered region 3 while landing
+Waiting for 1 seconds
+Plane #33 (Small) has taken off
+Plane #33 (Small) is flying for 1 seconds
+Plane #17 (Small) is preparing to take off
+Plane #17 (Small) is waiting for runway regions 2 and 4
+Plane #37 (Small) is landing on runway regions 5 and 3
+Plane #37 (Small) has entered region 5 while landing
+Waiting for 3 seconds
+Plane #36 (Small) has landed
+Plane #36 (Small) is idling at the terminal for 2 seconds
+Plane #27 (Small) is preparing to land
+Plane #27 (Small) is waiting for runway regions 1 and 0
+Plane #33 (Small) is preparing to land
+Plane #33 (Small) is waiting for runway regions 0 and 3
+Plane #19 (Small) has entered region 0 while taking off
+Waiting 1 seconds
+Plane #38 (Small) has entered region 2 while landing
+Waiting for 4 seconds
+Plane #36 (Small) is preparing to take off
+Plane #36 (Small) is waiting for runway regions 2 and 3
+Plane #27 (Small) is landing on runway regions 1 and 0
+Plane #27 (Small) has entered region 1 while landing
+Waiting for 4 seconds
+Plane #19 (Small) has taken off
+Plane #19 (Small) is flying for 1 seconds
+Plane #41 (Small) is landing on runway regions 4 and 5
+Plane #41 (Small) has entered region 4 while landing
+Waiting for 4 seconds
+Plane #37 (Small) has entered region 3 while landing
+Waiting for 2 seconds
+Plane #19 (Small) is preparing to land
+Plane #19 (Small) is waiting for runway regions 2 and 3
+Plane #37 (Small) has landed
+Plane #37 (Small) is idling at the terminal for 3 seconds
+Plane #25 (Small) is taking off on runway regions 3 and 2
+Plane #25 (Small) has entered region 3 while taking off
+Waiting 4 seconds
+Plane #38 (Small) has landed
+Plane #38 (Small) is idling at the terminal for 3 seconds
+Plane #27 (Small) has entered region 0 while landing
+Waiting for 3 seconds
+Plane #41 (Small) has entered region 5 while landing
+Waiting for 4 seconds
+Plane #37 (Small) is preparing to take off
+Plane #37 (Small) is waiting for runway regions 2 and 1
+Plane #38 (Small) is preparing to take off
+Plane #38 (Small) is waiting for runway regions 3 and 2
+Plane #27 (Small) has landed
+Plane #27 (Small) is idling at the terminal for 2 seconds
+Plane #33 (Small) is landing on runway regions 0 and 3
+Plane #33 (Small) has entered region 0 while landing
+Waiting for 1 seconds
+Plane #25 (Small) has entered region 2 while taking off
+Waiting 4 seconds
+Plane #33 (Small) has entered region 3 while landing
+Waiting for 2 seconds
+Plane #41 (Small) has landed
+Plane #41 (Small) is idling at the terminal for 3 seconds
+Plane #31 (Small) is taking off on runway regions 5 and 4
+Plane #31 (Small) has entered region 5 while taking off
+Waiting 1 seconds
+Plane #27 (Small) is preparing to take off
+Plane #27 (Small) is waiting for runway regions 3 and 5
+Plane #31 (Small) has entered region 4 while taking off
+Waiting 2 seconds
+Plane #6 (Large) is taking off on runway regions 5, 3, and 0
+Plane #6 (Large) has entered region 5 while taking off
+Waiting 1 seconds
+Plane #33 (Small) has landed
+Plane #33 (Small) is idling at the terminal for 3 seconds
+Plane #25 (Small) has taken off
+Plane #25 (Small) is flying for 2 seconds
+Plane #37 (Small) is taking off on runway regions 2 and 1
+Plane #37 (Small) has entered region 2 while taking off
+Waiting 3 seconds
+Plane #6 (Large) has entered region 3 while taking off
+Waiting 2 seconds
+Plane #41 (Small) is preparing to take off
+Plane #41 (Small) is waiting for runway regions 4 and 2
+Plane #28 (Small) is landing on runway regions 5 and 4
+Plane #28 (Small) has entered region 5 while landing
+Waiting for 2 seconds
+Plane #31 (Small) has taken off
+Plane #31 (Small) is flying for 1 seconds
+Plane #31 (Small) is preparing to land
+Plane #31 (Small) is waiting for runway regions 3 and 5
+Plane #33 (Small) is preparing to take off
+Plane #33 (Small) is waiting for runway regions 4 and 2
+Plane #25 (Small) is preparing to land
+Plane #25 (Small) is waiting for runway regions 2 and 1
+Plane #6 (Large) has entered region 0 while taking off
+Waiting 2 seconds
+Plane #18 (Small) is landing on runway regions 3 and 5
+Plane #18 (Small) has entered region 3 while landing
+Waiting for 2 seconds
+Plane #28 (Small) has entered region 4 while landing
+Waiting for 1 seconds
+Plane #37 (Small) has entered region 1 while taking off
+Waiting 4 seconds
+Plane #17 (Small) is taking off on runway regions 2 and 4
+Plane #17 (Small) has entered region 2 while taking off
+Waiting 3 seconds
+Plane #28 (Small) has landed
+Plane #28 (Small) is idling at the terminal for 4 seconds
+Plane #6 (Large) has taken off
+Plane #6 (Large) is flying for 6 seconds
+Plane #18 (Small) has entered region 5 while landing
+Waiting for 2 seconds
+Plane #38 (Small) is taking off on runway regions 3 and 2
+Plane #38 (Small) has entered region 3 while taking off
+Waiting 3 seconds
+Plane #18 (Small) has landed
+Plane #18 (Small) is idling at the terminal for 4 seconds
+Plane #17 (Small) has entered region 4 while taking off
+Waiting 2 seconds
+Plane #37 (Small) has taken off
+Plane #37 (Small) is flying for 4 seconds
+^C
+]0;flynn@Flynn-Desktop: ~/CS3013/CS-3013/project_2[01;32mflynn@Flynn-Desktop[00m:[01;34m~/CS3013/CS-3013/project_2[00m$ exit
+exit
+
+Script done on 2023-02-06 20:07:50-05:00 [COMMAND_EXIT_CODE="130"]
