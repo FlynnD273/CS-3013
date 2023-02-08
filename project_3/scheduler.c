@@ -57,15 +57,22 @@ void runfifo(struct job *joblist) {
 	printf("End of execution with FIFO.\n");
 }
 
+void swap(struct job *a, struct job *b) {
+	struct job temp = *a;
+	a->id = b->id;
+	a->length = b->length;
+	b->id = temp.id;
+	b->length = temp.length;
+}
+
 void sortlist(struct job *joblist) {
-	for (struct job *leftptr = joblist->next; leftptr != NULL; leftptr = leftptr->next) {
-		for (struct job *rightptr = leftptr->next; rightptr != NULL; rightptr = rightptr->next) {
-			if (rightptr->length < leftptr->length) {
-				struct job temp = *leftptr;
-				leftptr->id = rightptr->id;
-				leftptr->length = rightptr->length;
-				rightptr->id = temp.id;
-				rightptr->length = temp.length;
+	int cont = 1;
+	while (cont == 1) {
+		cont = 0;
+		for (struct job *current = joblist->next; current->next != NULL; current = current->next) {
+			if (current->length > current->next->length) {
+				swap(current, current->next);
+				cont = 1;
 			}
 		}
 	}
