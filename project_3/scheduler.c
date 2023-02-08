@@ -15,8 +15,10 @@ struct job {
 };
 
 struct job *readjobs (char *path) {
-	struct job *firstjob = &(struct job) { 0, 0 };
-	struct job *currentjob = firstjob;
+	struct job *head = (struct job *)malloc(sizeof(struct job));
+	head->id = -1;
+	head->length = -1;
+
 	FILE * fp;
 	char * line = NULL;
 	size_t len = 0;
@@ -27,19 +29,83 @@ struct job *readjobs (char *path) {
 			exit(EXIT_FAILURE);
 
 	int i = 0;
+	struct job *currentjob = head;
+
 	while ((read = getline(&line, &len, fp)) != -1) {
-			currentjob->length = atoi(line);
-			currentjob->id = i;
 			currentjob->next = (struct job *)malloc(sizeof(struct job));
 			currentjob = currentjob->next;
-			++i;
+
+			currentjob->length = atoi(line);
+			currentjob->id = i++;
 	}
 
 	fclose(fp);
 	if (line)
 		free(line);
 	
-	return firstjob;
+	return head;
+}
+
+void runfifo(struct job *joblist) {
+	printf("Execution trace with FIFO:\n");
+	struct job *current = joblist->next;
+	while (current != NULL) {
+		printf("Job %i ran for: %i\n", current->id, current->length);
+		current = current->next;
+	}
+
+	printf("End of execution with FIFO.\n");
+}
+
+void sortlist(struct job *joblist) {
+	for (struct job *leftptr = joblist->next; leftptr != NULL; leftptr = leftptr->next) {
+		for (struct job *rightptr = leftptr->next; rightptr != NULL; rightptr = rightptr->next) {
+			if (rightptr->length < leftptr->length) {
+				struct job temp = *leftptr;
+				leftptr->id = rightptr->id;
+				leftptr->length = rightptr->length;
+				rightptr->id = temp.id;
+				rightptr->length = temp.length;
+			}
+		}
+	}
+}
+
+void runsjf(struct job *joblist) {
+	sortlist(joblist);
+	printf("Execution trace with SJF:\n");
+	struct job *current = joblist->next;
+	while (current != NULL) {
+		printf("Job %i ran for: %i\n", current->id, current->length);
+		current = current->next;
+	}
+
+	printf("End of execution with SJF.\n");
+}
+
+void runrr(struct job *joblist, int timeslice) {
+	printf("Execution trace with RR:\n");
+	while (joblist->next != NULL) {
+		struct job *current = joblist->next;
+		struct job *prev = joblist;
+		while (current != NULL) {
+			if (current->length <= timeslice) {
+				printf("Job %i ran for: %i\n", current->id, current->length);
+				prev->next = current->next;
+				free(current);
+				current = prev;
+			}
+			else {
+				printf("Job %i ran for: %i\n", current->id, timeslice);
+				current->length -= timeslice;
+			}
+			prev = current;
+			current = current->next;
+		}
+	}
+
+	printf("End of execution with RR.\n");
+
 }
 
 int main(int argc, char **argv) {
@@ -61,13 +127,16 @@ int main(int argc, char **argv) {
 	char *path = argv[2];
 	int timeslice = atoi(argv[3]);
 
-	printf("Algorithm: %d\nPath: %s\nTime Slice: %d\n", alg, path, timeslice);
-
 	struct job *joblist = readjobs(path);
-	struct job *current = joblist;
-	do {
-		printf("ID: %d-> Length: %d\n", current->id, current->length);
-		current = current->next;
+	switch (alg) {
+		case fifo:
+			runfifo(joblist);
+			break;
+		case sjf:
+			runsjf(joblist);
+			break;
+		case rr:
+			runrr(joblist, timeslice);
+			break;
 	}
-	while (current->next);
 }
