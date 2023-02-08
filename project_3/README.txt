@@ -8,5 +8,6 @@ After doing so, you can run the tests from this directory by running the
 Passing all tests are not sufficient to obtain all points for this assignment. As an example, any assignment in which hardcodes the expected output to pass the test case will lead to point deductions.
 
 
+We started out by first making sure we could read the command line arguments properly. After that, we added skeleton methods for running the three algorithms. We ran into a bit of trouble with the test cases not completing, but that was quickly resolved. It turns out the SJF output expected the use of a stable sorting algorithm. So after switching to BubbleSort, all the tests looking at the output of the scheduler task order passed. 
 
-
+There's not really that much to talk about for the scheduling algorithms. I will note that at this point, the round-robin algorithm does mutate the list. If this becomes an issue later on, we can always just copy the list before running the algorithm. The rest of the algorithms are pretty simple. FIFO just traverses the list, SJF just sorts then traverses the list. 
