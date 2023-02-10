@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,6 +12,12 @@ enum algtype {
 struct job {
 	int id;
 	int length;
+
+	int progress;
+	int starttime;
+	int lasttime;
+	int waittime;
+
 	struct job *next;
 };
 
@@ -46,14 +53,22 @@ struct job *readjobs (char *path) {
 	return head;
 }
 
+void runorderedjob(struct job *joblist) {
+	int time = 0;
+
+	for (struct job *current = joblist->next; current != NULL; current = current->next) {
+		printf("Job %i ran for: %i\n", current->id, current->length);
+		current->progress = current->length;
+		current->starttime = time;
+		current->waittime += time - current->lasttime;
+		time += current->length;
+		current->lasttime = time;
+	}
+}
+
 void runfifo(struct job *joblist) {
 	printf("Execution trace with FIFO:\n");
-	struct job *current = joblist->next;
-	while (current != NULL) {
-		printf("Job %i ran for: %i\n", current->id, current->length);
-		current = current->next;
-	}
-
+	runorderedjob(joblist);	
 	printf("End of execution with FIFO.\n");
 }
 
@@ -81,33 +96,40 @@ void sortlist(struct job *joblist) {
 void runsjf(struct job *joblist) {
 	sortlist(joblist);
 	printf("Execution trace with SJF:\n");
-	struct job *current = joblist->next;
-	while (current != NULL) {
-		printf("Job %i ran for: %i\n", current->id, current->length);
-		current = current->next;
-	}
-
+	runorderedjob(joblist);	
 	printf("End of execution with SJF.\n");
 }
 
 void runrr(struct job *joblist, int timeslice) {
 	printf("Execution trace with RR:\n");
-	while (joblist->next != NULL) {
-		struct job *current = joblist->next;
-		struct job *prev = joblist;
-		while (current != NULL) {
-			if (current->length <= timeslice) {
-				printf("Job %i ran for: %i\n", current->id, current->length);
-				prev->next = current->next;
-				free(current);
-				current = prev;
+	int cont = 1;
+	int time = 0;
+
+	while (cont) {
+		cont = 0;
+
+		for (struct job *current = joblist->next; current != NULL; current = current->next) {
+			if (current->progress >= current->length) continue;
+
+			if (current->progress == 0) {
+				current->starttime = time;
+			}
+
+			current->waittime += time - current->lasttime;
+
+			if (current->length - current->progress <= timeslice) {
+				printf("Job %i ran for: %i\n", current->id, current->length - current->progress);
+				current->progress = current->length;
+				time += current->length;
 			}
 			else {
 				printf("Job %i ran for: %i\n", current->id, timeslice);
-				current->length -= timeslice;
+				current->progress += timeslice;
+				time += timeslice;
+				cont = 1;
 			}
-			prev = current;
-			current = current->next;
+
+			current->lasttime = time;
 		}
 	}
 
