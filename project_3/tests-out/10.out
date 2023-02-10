@@ -26,15 +26,15 @@ Job 4 ran for: 5
 Job 8 ran for: 3
 End of execution with RR.
 Begin analyzing RR:
-Job 0 -- Response time: 0  Turnaround: 54  Wait: 39
-Job 1 -- Response time: 5  Turnaround: 143  Wait: 110
+Job 0 -- Response time: 0  Turnaround: 49  Wait: 39
+Job 1 -- Response time: 5  Turnaround: 98  Wait: 80
 Job 2 -- Response time: 10  Turnaround: 11  Wait: 10
-Job 3 -- Response time: 11  Turnaround: 65  Wait: 54
-Job 4 -- Response time: 16  Turnaround: 163  Wait: 128
-Job 5 -- Response time: 21  Turnaround: 120  Wait: 96
+Job 3 -- Response time: 11  Turnaround: 55  Wait: 49
+Job 4 -- Response time: 16  Turnaround: 103  Wait: 83
+Job 5 -- Response time: 21  Turnaround: 90  Wait: 76
 Job 6 -- Response time: 26  Turnaround: 29  Wait: 26
-Job 7 -- Response time: 29  Turnaround: 82  Wait: 70
-Job 8 -- Response time: 34  Turnaround: 181  Wait: 148
-Job 9 -- Response time: 39  Turnaround: 96  Wait: 82
-Average -- Response: 19.10  Turnaround: 94.40  Wait: 76.30
+Job 7 -- Response time: 29  Turnaround: 67  Wait: 60
+Job 8 -- Response time: 34  Turnaround: 106  Wait: 88
+Job 9 -- Response time: 39  Turnaround: 76  Wait: 67
+Average -- Response: 19.10  Turnaround: 68.40  Wait: 57.80
 End analyzing RR.

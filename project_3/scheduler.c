@@ -119,8 +119,8 @@ void runrr(struct job *joblist, int timeslice) {
 
 			if (current->length - current->progress <= timeslice) {
 				printf("Job %i ran for: %i\n", current->id, current->length - current->progress);
+				time += current->length - current->progress;
 				current->progress = current->length;
-				time += current->length;
 			}
 			else {
 				printf("Job %i ran for: %i\n", current->id, timeslice);
