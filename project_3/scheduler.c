@@ -166,7 +166,7 @@ void runanalysis(struct job *joblist, enum algtype alg) {
 	avgresponse = (float)totalresponse/totalcount;
 	avgturnaround = (float)totalturnaround/totalcount;
 	avgwait = (float)totalwait/totalcount;
-	printf("Average -- Response time: %.2f  Turnaround: %.2f  Wait: %.2f\n", avgresponse, avgturnaround, avgwait);
+	printf("Average -- Response: %.2f  Turnaround: %.2f  Wait: %.2f\n", avgresponse, avgturnaround, avgwait);
 	switch (alg) {
 		case fifo:
 			printf("End analyzing FIFO.\n");
