@@ -137,6 +137,49 @@ void runrr(struct job *joblist, int timeslice) {
 
 }
 
+void runanalysis(struct job *joblist, enum algtype alg) {
+	switch (alg) {
+		case fifo:
+			printf("Begin analyzing FIFO:\n");
+			break;
+		case sjf:
+			printf("Begin analyzing SJF:\n");
+			break;
+		case rr:
+			printf("Begin analyzing RR:\n");
+			break;
+	}
+	int response, turnaround, wait, id;
+	int totalresponse = 0, totalturnaround = 0, totalwait = 0, totalcount = 0;
+	for (struct job *current = joblist->next; current != NULL; current = current->next) {
+		id = current->id;
+		response = current->starttime;
+		turnaround = current->lasttime;
+		wait = current->waittime;
+		printf("Job %i -- Response time: %i  Turnaround: %i  Wait: %i\n", id, response, turnaround, wait);
+		totalresponse += response;
+		totalturnaround += turnaround;
+		totalwait += wait;
+		totalcount += 1;
+	}
+	float avgresponse, avgturnaround, avgwait;
+	avgresponse = (float)totalresponse/totalcount;
+	avgturnaround = (float)totalturnaround/totalcount;
+	avgwait = (float)totalwait/totalcount;
+	printf("Average -- Response time: %.2f  Turnaround: %.2f  Wait: %.2f\n", avgresponse, avgturnaround, avgwait);
+	switch (alg) {
+		case fifo:
+			printf("End analyzing FIFO.\n");
+			break;
+		case sjf:
+			printf("End analyzing SJF.\n");
+			break;
+		case rr:
+			printf("End analyzing RR.\n");
+			break;
+	}
+}
+
 int main(int argc, char **argv) {
 	if (argc != 4) return -1;
 	enum algtype alg;
@@ -168,4 +211,5 @@ int main(int argc, char **argv) {
 			runrr(joblist, timeslice);
 			break;
 	}
+	runanalysis(joblist, alg);
 }
