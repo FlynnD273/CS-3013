@@ -165,6 +165,7 @@ int main () {
 		int i = sscanf(input, "%i,%50[^,],%i,%i", &pid, type, &vadd, &value);
 		if (i != 4) {
 			printf("Invalid input. %i variables filled. \"%i\", \"%s\", \"%i, \"%i\"\n", i, pid, type, vadd, value);
+			continue;
 		}
 		
 		if (strcmp(type, "map") == 0) {
