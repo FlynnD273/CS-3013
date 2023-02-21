@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdint.h>
 
 #define MEM_SIZE 64
 #define PAGE_SIZE 16
@@ -7,7 +8,9 @@
 
 #define PERM_MASK   0b10000000
 #define PERM_SHIFT  7
-#define VPN_MASK    0b00011100
+#define PRES_MASK   0b01000000
+#define PRES_SHIFT  6
+#define VPN_MASK    0b00001100
 #define VPN_SHIFT   2
 #define FRAME_MASK  0b00000011
 #define FRAME_SHIFT 0
@@ -19,6 +22,7 @@ int table_loc[NUM_PROC]; // Index for the location of the page table for a given
 // memory[1] = 3; // Maps to physical frame 3
 // memory[2] = 1; // For read and write privilages
 unsigned char memory[MEM_SIZE];
+int currentframe = 0;
 
 void printbinary(int value) {
 	for (int j = 0; j < 8; j++) {
@@ -39,7 +43,6 @@ void dump () {
 	}
 }
 
-
 int gettablevalue (int value, int mask, int shift) {
 	if (value == -1) return -1;
 
@@ -54,7 +57,32 @@ int maketableentry (int vpn, int frame, int perm) {
 	return vpnbits | framebits | permbits;
 }
 
+int loadpt (int pid) {
+	// Load the page table for the given PID from the swap file, return the frame number that it was put in
+	return -1;
+}
+
+int evictpage (int pid) {
+	// Evict a page from memory. Skip currentframe if it's the page table for the given PID
+	// Return the frame number
+	return -1;
+}
+
+int loadpage (int pid, int vpn) {
+	// Load page from disk. Skip currentframe if it's the page table for the given PID
+	// Return the frame that it was put into
+	return;
+}
+
 int gettableentry (int pid, int vadd) {
+	if (table_loc[pid] == -1) {
+		printf("Error: page table not initialized for PID %i\n", pid);
+		return -1;
+	}
+	if (table_loc[pid] == -2) {
+		table_loc[pid] = loadpt(pid);
+	}
+
 	for (int i = table_loc[pid]; i < table_loc[pid] + PAGE_SIZE; i++) {
 		if (gettablevalue(memory[i], VPN_MASK, VPN_SHIFT)  == vadd / PAGE_SIZE) {
 			return memory[i];
@@ -75,23 +103,13 @@ int getpadd (int pid, int vadd) {
 int initprocess (int pid) {
 	if (table_loc[pid] != -1) return 0;
 
-	int frame = 0;
+	int frame = currentframe;
+	currentframe++;
 
-	for (int i = 0; i < NUM_PROC; i++) {
-		if (table_loc[i] < 0) continue;
-		if (table_loc[i] == frame) {
-			frame++;
-			i = -1;
-			continue;
-		}
-
-		for (int j = table_loc[i]; j < table_loc[i] + PAGE_SIZE - 2; j += 3) {
-			if (memory[j + 1] == frame) {
-				frame++;
-				i = -1;
-				continue;
-			}
-		}
+	if (frame >= MEM_SIZE / PAGE_SIZE) {
+		frame = evictpage(pid);
+		printf("Ran out of memory.\n");
+		return -1;
 	}
 
 	table_loc[pid] = frame;
@@ -106,41 +124,36 @@ int initprocess (int pid) {
 int map (int pid, int vadd, int iswriteable) {
 	initprocess(pid);
 
-	int frame = 0;
+	int frame = currentframe;
+	int vaddvpn = vadd / PAGE_SIZE;
 
-	for (int i = 0; i < NUM_PROC; i++) {
-		if (table_loc[i] < 0) continue;
-		if (table_loc[i] == frame) {
-			frame++;
-			i = -1;
-			continue;
-		}
-
-		for (int j = table_loc[i]; j < table_loc[i] + PAGE_SIZE; j++) {
-			if (memory[i] == -1) continue;
-
-			if (gettablevalue(memory[j], FRAME_MASK, FRAME_SHIFT) == frame) {
-				frame++;
-				i = -1;
-				continue;
-			}
-		}
-	}
+	currentframe++;
 
 	if (frame >= MEM_SIZE / PAGE_SIZE) {
-		// No more physical memory
 		printf("Ran out of physical memory\n");
 		return -1;
 	}
 
 	int tableindex = table_loc[pid] * PAGE_SIZE;
 	while (memory[tableindex] != 255 && tableindex < table_loc[pid] + PAGE_SIZE) {
+		int vpn = gettablevalue(memory[tableindex], VPN_MASK, VPN_SHIFT);
+
+		if (vpn == vaddvpn) {
+			frame = gettablevalue(memory[tableindex], FRAME_MASK, FRAME_SHIFT);
+			currentframe--;
+			break;
+		}
+
 		tableindex++;
 	}
 
 	if (tableindex == table_loc[pid] + PAGE_SIZE) {
 		printf("Ran out of space in page table\n");
 		return -1;
+	}
+
+	if (frame >= MEM_SIZE / PAGE_SIZE) {
+		frame = evictpage(pid);
 	}
 
 	memory[tableindex] = maketableentry(vadd / PAGE_SIZE, frame, iswriteable);
@@ -168,7 +181,7 @@ int store (int pid, int vadd, int value) {
 	int padd = getpadd(pid, vadd);
 	if (padd == -1) return -1;
 
-	memory[padd] = value;
+	memory[padd] = (uint8_t)value;
 	printf("Stored value %i at virtual address %i (physical address %i)\n", value, vadd, padd);
 	return 0;
 }
