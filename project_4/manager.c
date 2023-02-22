@@ -57,6 +57,14 @@ int maketableentry (int vpn, int frame, int perm) {
 	return vpnbits | framebits | permbits;
 }
 
+int evictpt (int pid) {
+	// Evict the page table from memory and store it in the swap file. This should be called from evictpage only. 
+
+	// Page table is present, but on disk
+	table_loc[pid] = -2;
+	return -1;
+}
+
 int loadpt (int pid) {
 	// Load the page table for the given PID from the swap file, return the frame number that it was put in
 	return -1;
