@@ -117,7 +117,7 @@ int evictpt (int pid) {
 int evictpage (int pid) {
 	// Evict a page from memory. Skip currentframe if it's the page table for the given PID
 	int evictframe = currentframe % (MEM_SIZE / PAGE_SIZE);
-	if (table_loc[pid] = evictframe){
+	if (table_loc[pid] == evictframe){
 		currentframe++;
 		evictframe++;
 	}
@@ -188,6 +188,7 @@ int loadpt (int pid) {
 	for (int i = 0; i < PAGE_SIZE; i++) {
 		memory[memstart + i] = disk[diskstart + i];
 	}
+	printf("Loaded page table for pid %i at frame %i from swap slot %i\n", pid, frame, diskstart / PAGE_SIZE);
 	
 	return frame;
 }
@@ -222,6 +223,8 @@ int loadpage (int pid, int vpn) {
 		}
 	}
 	
+	printf("Loaded swap slot %i (pid %i's virtual page %i)into frame %i\n", diskstart / PAGE_SIZE, pid, vpn, frame);
+	
 	// Return the frame that it was put into
 	return frame;
 }
@@ -237,7 +240,7 @@ int gettableentry (int pid, int vadd) {
 	
 	int memstart = table_loc[pid] * PAGE_SIZE;
 	for (int i = 0; i < PAGE_SIZE; i++) {
-		if (gettablevalue(memory[memstart+i], VPN_MASK, VPN_SHIFT)  == vadd / PAGE_SIZE && isgoodentry(memory[memstart+i])) {
+		if (gettablevalue(memory[memstart+i], VPN_MASK, VPN_SHIFT)  == vadd / PAGE_SIZE) {
 			return memory[memstart+i];
 		}
 	}
@@ -286,13 +289,11 @@ int map (int pid, int vadd, int iswriteable) {
 
 	int frame = currentframe;
 	int vaddvpn = vadd / PAGE_SIZE;
-
 	if (frame >= MEM_SIZE / PAGE_SIZE) {
 		frame = evictpage(pid);
 	} else {
 		currentframe++;
 	}
-	
 	int tableindex = table_loc[pid] * PAGE_SIZE;
 	while (memory[tableindex] != 255 && tableindex < (table_loc[pid] + 1) * PAGE_SIZE) {
 		int vpn = gettablevalue(memory[tableindex], VPN_MASK, VPN_SHIFT);
@@ -361,12 +362,10 @@ int main () {
 	for (int i = 0; i < NUM_PROC; i++) { table_loc[i] = -1; }
 
 	while (1) {
-		printf("currentframe is %i\n", currentframe);
 		if (currentframe >= 2 * (MEM_SIZE / PAGE_SIZE)) {
 			currentframe -= (MEM_SIZE / PAGE_SIZE);
 		} //same modulo, but keeping above a minimum to ensure program knows all have been filled
 		
-		printf("currentframe is %i\n", currentframe);
 		printf("Instruction? ");
 		char input[50];
 		fgets(input, 50, stdin);
