@@ -81,7 +81,7 @@ int maketableentry (int vpn, int frame, int perm) {
 }
 
 void storetodisk (int frame, int diskaddress) {
-	disk = fopen("disk", "ab");
+	disk = fopen("disk", "rb+");
 	char* memstart = memory + (frame * PAGE_SIZE);
 	fseek(disk, diskaddress, SEEK_SET);
 	fwrite(memstart, 1, PAGE_SIZE, disk);
@@ -98,7 +98,7 @@ void loadfromdisk (int frame, int diskaddress) {
 
 void initfile () {
 	disk = fopen("disk", "wb");
-	int nothing = 1;
+	int nothing = 0;
 	for (int i = 0; i < NUM_PROC * (PROC_SIZE + PAGE_SIZE); i++) {
 		fwrite(&nothing, 1, 1, disk);
 	}
