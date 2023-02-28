@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 #define MEM_SIZE 64
 #define PAGE_SIZE 16
@@ -26,10 +27,14 @@ int table_loc[NUM_PROC]; // Index for the location of the page table for a given
 // memory[2] = 1; // For read and write privilages
 unsigned char memory[MEM_SIZE];
 
+
+//deprecated implementation of disk as array
 //storage space for size of each process, plus one extra page each for their page table
-unsigned char disk[NUM_PROC * (PROC_SIZE + PAGE_SIZE)];
+//unsigned char disk[NUM_PROC * (PROC_SIZE + PAGE_SIZE)];
 //page table for a given process is stored at PID * (PROC_SIZE + PAGE_SIZE)
 //data pages are stored following their respective page tables
+
+FILE* disk;
 
 int currentframe = 0;
 
@@ -75,12 +80,38 @@ int maketableentry (int vpn, int frame, int perm) {
 	return vpnbits | framebits | permbits | presbits;
 }
 
-void evictspecificpage(int pid, int vpn, int frame) {
-	int memstart = frame * PAGE_SIZE;
-	int diskstart = (pid * (PROC_SIZE + PAGE_SIZE)) + ((vpn + 1) * PAGE_SIZE);
-	for (int i = 0; i < PAGE_SIZE; i++) {
-		disk[diskstart + i] = memory[memstart + i];
+void storetodisk (int frame, int diskaddress) {
+	disk = fopen("disk", "ab");
+	char* memstart = memory + (frame * PAGE_SIZE);
+	fseek(disk, diskaddress, SEEK_SET);
+	fwrite(memstart, 1, PAGE_SIZE, disk);
+	fclose(disk);
+}
+
+void loadfromdisk (int frame, int diskaddress) {
+	disk = fopen("disk", "rb");
+	char* memstart = memory + (frame * PAGE_SIZE);
+	fseek(disk, diskaddress, SEEK_SET);
+	fread(memstart, 1, PAGE_SIZE, disk);
+	fclose(disk);
+}
+
+void initfile () {
+	disk = fopen("disk", "wb");
+	int nothing = 1;
+	for (int i = 0; i < NUM_PROC * (PROC_SIZE + PAGE_SIZE); i++) {
+		fwrite(&nothing, 1, 1, disk);
 	}
+	fclose(disk);
+}
+
+void evictspecificpage(int pid, int vpn, int frame) {
+	//int memstart = frame * PAGE_SIZE;
+	int diskstart = (pid * (PROC_SIZE + PAGE_SIZE)) + ((vpn + 1) * PAGE_SIZE);
+	storetodisk(frame, diskstart);
+	/*for (int i = 0; i < PAGE_SIZE; i++) {
+		disk[diskstart + i] = memory[memstart + i];
+	}*/
 	printf("Swapped frame %i to disk at swap slot %i\n", frame, diskstart / PAGE_SIZE);
 }
 
@@ -155,11 +186,12 @@ int evictpage (int pid) {
 			int vpn = gettablevalue(entry, FRAME_MASK, FRAME_SHIFT);
 			
 			//move page to appropriate location in storage
-			int memstart = evictframe * PAGE_SIZE;
+			//int memstart = evictframe * PAGE_SIZE;
 			int diskstart = (ownerprocess * (PROC_SIZE + PAGE_SIZE)) + ((vpn + 1) * PAGE_SIZE);
-			for (int i = 0; i < PAGE_SIZE; i++) {
+			storetodisk(evictframe, diskstart);
+			/*for (int i = 0; i < PAGE_SIZE; i++) {
 				disk[diskstart + i] = memory[memstart + i];
-			}
+			}*/
 			printf("Swapped frame %i to disk at swap slot %i\n", evictframe, diskstart / PAGE_SIZE);
 			//update page table entry - flip present bit
 			memory[table_loc[ownerprocess] * PAGE_SIZE + tableentrypos] = entry ^ PRES_MASK;
@@ -183,11 +215,12 @@ int loadpt (int pid) {
 	int frame = evictpage(pid);
 	
 	//move page table to memory in given frame
-	int memstart = frame * PAGE_SIZE;
+	//int memstart = frame * PAGE_SIZE;
 	int diskstart = (pid * (PROC_SIZE + PAGE_SIZE));
-	for (int i = 0; i < PAGE_SIZE; i++) {
+	loadfromdisk(frame, diskstart);
+	/* for (int i = 0; i < PAGE_SIZE; i++) {
 		memory[memstart + i] = disk[diskstart + i];
-	}
+	} */
 	printf("Loaded page table for pid %i at frame %i from swap slot %i\n", pid, frame, diskstart / PAGE_SIZE);
 	
 	return frame;
@@ -199,11 +232,16 @@ int loadpage (int pid, int vpn) {
 	int frame = evictpage(pid);
 	
 	//move page to memory in given frame
-	int memstart = frame * PAGE_SIZE;
+	//int memstart = frame * PAGE_SIZE;
 	int diskstart = pid * (PROC_SIZE + PAGE_SIZE) + (vpn + 1) * PAGE_SIZE;
+	loadfromdisk(frame, diskstart);
+	/* deprecated
 	for (int i = 0; i < PAGE_SIZE; i++) {
 		memory[memstart + i] = disk[diskstart + i];
 	}
+	*/
+	
+	
 	
 	//update page table entry
 	int tablestart = table_loc[pid] * PAGE_SIZE;
@@ -223,7 +261,7 @@ int loadpage (int pid, int vpn) {
 		}
 	}
 	
-	printf("Loaded swap slot %i (pid %i's virtual page %i)into frame %i\n", diskstart / PAGE_SIZE, pid, vpn, frame);
+	printf("Loaded swap slot %i (pid %i's virtual page %i) into frame %i\n", diskstart / PAGE_SIZE, pid, vpn, frame);
 	
 	// Return the frame that it was put into
 	return frame;
@@ -239,7 +277,7 @@ int gettableentry (int pid, int vadd) {
 	}
 	
 	int memstart = table_loc[pid] * PAGE_SIZE;
-	for (int i = 0; i < PAGE_SIZE; i++) {
+	for (int i = 0; i < PAGE_SIZE && memory[memstart+i] != 255; i++) {
 		if (gettablevalue(memory[memstart+i], VPN_MASK, VPN_SHIFT)  == vadd / PAGE_SIZE) {
 			return memory[memstart+i];
 		}
@@ -360,6 +398,9 @@ int load (int pid, int vadd) {
 int main () {
 	// Initialize the page table locations to be blank
 	for (int i = 0; i < NUM_PROC; i++) { table_loc[i] = -1; }
+	
+	//initialize disk
+	initfile();
 
 	while (1) {
 		if (currentframe >= 2 * (MEM_SIZE / PAGE_SIZE)) {
