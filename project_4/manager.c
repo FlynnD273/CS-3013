@@ -20,15 +20,10 @@
 #define FRAME_SHIFT 0
 
 int table_loc[NUM_PROC]; // Index for the location of the page table for a given process ID
-// Page table entries should be the page number then the frame number then the permission bits. - this format is deprecated
-// Example:
-// memory[0] = 2; // Page 2
-// memory[1] = 3; // Maps to physical frame 3
-// memory[2] = 1; // For read and write privilages
+// Page table entries should be the permission bit, the present bit, valid bit, virtual page number, then frame number
 unsigned char memory[MEM_SIZE];
 
 
-//deprecated implementation of disk as array
 //storage space for size of each process, plus one extra page each for their page table
 //unsigned char disk[NUM_PROC * (PROC_SIZE + PAGE_SIZE)];
 //page table for a given process is stored at PID * (PROC_SIZE + PAGE_SIZE)
