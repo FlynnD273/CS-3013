@@ -1,0 +1,41 @@
+Put page table for PID 0 into physical frame 0
+Mapped virtual address 0 (page 0) into physical frame 1
+
+Mapped virtual address 16 (page 1) into physical frame 2
+
+Mapped virtual address 32 (page 2) into physical frame 3
+
+Swapped frame 1 to disk at swap slot 1
+Swapped frame 2 to disk at swap slot 2
+Swapped frame 3 to disk at swap slot 3
+Swapped frame 0 to disk at swap slot 0
+Put page table for PID 1 into physical frame 0
+Mapped virtual address 0 (page 0) into physical frame 1
+
+Invalid input. 3 variables filled. "1", "store 2", "64, "1"
+
+Stored value 64 at virtual address 2 (physical address 18)
+
+Error: no table entry found for virtual address 48
+Mapped virtual address 48 (page 3) into physical frame 2
+Stored value 10 at virtual address 48 (physical address 32)
+
+Loaded page table for pid 0 at frame 3 from swap slot 0
+Swapped frame 1 to disk at swap slot 6
+Swapped frame 2 to disk at swap slot 9
+Swapped frame 0 to disk at swap slot 5
+Loaded swap slot 1 (pid 0's virtual page 0) into frame 0
+The value 0 is at virtual address 0 (physical address 0)
+
+Put page table for PID 2 into physical frame 1
+Error: no table entry found for virtual address 0
+Mapped virtual address 0 (page 0) into physical frame 2
+Stored value 4 at virtual address 0 (physical address 32)
+
+The value 16 is at virtual address 0 (physical address 0)
+Instruction? 1,load,2,0
+Swapped frame 0 to disk at swap slot 1
+Swapped frame 3 to disk at swap slot 0
+Loaded page table for pid 1 at frame 3 from swap slot 5
+Loaded swap slot 6 (pid 1's virtual page 0) into frame 0
+The value 64 is at virtual address 2 (physical address 2)

@@ -1,0 +1,13 @@
+Put page table for PID 0 into physical frame 0
+Mapped virtual address 0 (page 0) into physical frame 1
+
+Stored value 17 at virtual address 0 (physical address 16)
+
+The value 17 is at virtual address 0 (physical address 16)
+
+Put page table for PID 1 into physical frame 2
+Error: no table entry found for virtual address 17
+Mapped virtual address 17 (page 1) into physical frame 3
+Stored value 56 at virtual address 17 (physical address 49)
+
+The value 56 is at virtual address 17 (physical address 49)
