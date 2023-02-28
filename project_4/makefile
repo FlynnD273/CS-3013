@@ -10,7 +10,7 @@ DFILES= $(patsubst %.c, %.d, $(SRCFILES))
 all: $(PROGFILES)
 
 clean:
-	$(RM) $(PROGFILES) $(OFILES) $(DFILES)  adler_duniho_project4.zip
+	$(RM) $(PROGFILES) $(OFILES) $(DFILES)  adler_duniho_project4.zip disk
 
 zip:
 	make clean
