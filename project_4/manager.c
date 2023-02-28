@@ -160,7 +160,7 @@ int evictpage (int pid) {
 			for (int i = 0; i < PAGE_SIZE; i++) {
 				disk[diskstart + i] = memory[memstart + i];
 			}
-			
+			printf("Swapped frame %i to disk at swap slot %i\n", evictframe, diskstart / PAGE_SIZE);
 			//update page table entry - flip present bit
 			memory[table_loc[ownerprocess] * PAGE_SIZE + tableentrypos] = entry ^ PRES_MASK;
 		}
