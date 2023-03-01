@@ -1,0 +1,52 @@
+
+ Put page table for PID 0 into physical frame 0
+Mapped virtual address 0 (page 0) into physical frame 1
+
+ Mapped virtual address 16 (page 1) into physical frame 2
+
+ Mapped virtual address 32 (page 2) into physical frame 3
+
+ Stored value 66 at virtual address 12 (physical address 28)
+
+ Stored value 15 at virtual address 27 (physical address 43)
+
+ Stored value 102 at virtual address 40 (physical address 56)
+
+ Swapped frame 1 to disk at swap slot 1
+Mapped virtual address 16 (page 1) into physical frame 2
+
+ Put page table for PID 1 into physical frame 1
+Swapped frame 2 to disk at swap slot 2
+Mapped virtual address 0 (page 0) into physical frame 2
+
+ Swapped frame 3 to disk at swap slot 3
+Mapped virtual address 16 (page 1) into physical frame 3
+
+ Swapped frame 0 to disk at swap slot 0
+Mapped virtual address 32 (page 2) into physical frame 0
+
+ Swapped frame 2 to disk at swap slot 6
+Swapped frame 3 to disk at swap slot 7
+Swapped frame 0 to disk at swap slot 8
+Swapped frame 1 to disk at swap slot 5
+Loaded page table for pid 0 at frame 1 from swap slot 0
+Loaded swap slot 1 (pid 0's virtual page 0) into frame 2
+The value 66 is at virtual address 12 (physical address 44)
+
+ Loaded swap slot 2 (pid 0's virtual page 1) into frame 3
+The value 15 is at virtual address 27 (physical address 59)
+
+ Loaded swap slot 3 (pid 0's virtual page 2) into frame 0
+The value 102 is at virtual address 40 (physical address 8)
+
+ Stored value 234 at virtual address 12 (physical address 44)
+
+ Error: writes are not allowed on page 1
+
+ Stored value 14 at virtual address 40 (physical address 8)
+
+ The value 234 is at virtual address 12 (physical address 44)
+
+ The value 15 is at virtual address 27 (physical address 59)
+
+ The value 14 is at virtual address 40 (physical address 8)

@@ -1,0 +1,12 @@
+Put page table for PID 0 into physical frame 0
+Mapped virtual address 3 (page 0) into physical frame 1
+
+Stored value 8 at virtual address 3 (physical address 19)
+
+Mapped virtual address 3 (page 0) into physical frame 1
+
+The value 8 is at virtual address 3 (physical address 19)
+
+Error: writes are not allowed on page 0
+
+The value 8 is at virtual address 3 (physical address 19)

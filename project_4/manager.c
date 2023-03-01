@@ -166,8 +166,8 @@ int evictpage (int pid) {
 				continue;
 			}
 			int memstart = table_loc[i] * PAGE_SIZE;
-			for (int j = 0; j < PAGE_SIZE; j++) {
-				if (evictframe == gettablevalue(memory[memstart+j], FRAME_MASK, FRAME_SHIFT) && isgoodentry(memory[memstart+j])) {
+			for (int j = 0; j < PAGE_SIZE && memory[memstart+j] != 255; j++) {
+				if (evictframe == gettablevalue(memory[memstart+j], FRAME_MASK, FRAME_SHIFT) && gettablevalue(memory[memstart+j], PRES_MASK, FRAME_MASK)) {
 					//page table points to page being removed
 					ownerprocess = i;
 					tableentrypos = j;
@@ -178,7 +178,7 @@ int evictpage (int pid) {
 		if (ownerprocess != -1) {
 			//get table entry for this page
 			int entry = memory[table_loc[ownerprocess] * PAGE_SIZE + tableentrypos];
-			int vpn = gettablevalue(entry, FRAME_MASK, FRAME_SHIFT);
+			int vpn = gettablevalue(entry, VPN_MASK, VPN_SHIFT);
 			
 			//move page to appropriate location in storage
 			//int memstart = evictframe * PAGE_SIZE;
